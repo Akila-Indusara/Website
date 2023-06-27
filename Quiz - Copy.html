@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Quiz</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+    <!-- Load an icon library to show a hamburger menu (bars) on small screens -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body data-theme="light">
+	<div class="topnav" id="myTopnav">
+	  <a href="#home">Home</a>
+	  <a href="#news">News</a>
+	  <a href="Quiz_details.html">Quiz</a>
+	  <a href="About_Us.html">About Us</a>
+	  <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+		<i class="fa fa-bars"></i>
+	  </a>
+	</div>
+    <div class="background">
+      <div class="container">
+        <h1>Quiz</h1>
+        <!--01-->
+        <div>Question 01 goes here</div>
+        
+        <div class="btn-grid">
+          <button class="btn" id="button1-1" onclick="checkAnswer1(this)">Button 1</button>
+          <button class="btn" id="button1-2" onclick="checkAnswer1(this)">Button 2</button>
+          <button class="btn" id="button1-3" onclick="checkAnswer1(this)">Button 3</button>
+          <button class="btn" id="button1-4" onclick="checkAnswer1(this)">Button 4</button>
+          </div>
+        <!--02-->
+        <div>Question 02 goes here</div>
+        
+        <div class="btn-grid">
+          <button class="btn" id="button2-1" onclick="checkAnswer2(this)">Button 1</button>
+          <button class="btn" id="button2-2" onclick="checkAnswer2(this)">Button 2</button>
+          <button class="btn" id="button2-3" onclick="checkAnswer2(this)">Button 3</button>
+          <button class="btn" id="button2-4" onclick="checkAnswer2(this)">Button 4</button>
+          </div>
+        <!--03-->
+        <div>Question 03 goes here</div>
+        
+        <div class="btn-grid">
+          <button class="btn" id="button3-1" onclick="checkAnswer3(this)">Button 1</button>
+          <button class="btn" id="button3-2" onclick="checkAnswer3(this)">Button 2</button>
+          <button class="btn" id="button3-3" onclick="checkAnswer3(this)">Button 3</button>
+          <button class="btn" id="button3-4" onclick="checkAnswer3(this)">Button 4</button>
+          </div>
+        <!--04-->
+        <div>Question 04 goes here</div>
+        
+        <div class="btn-grid">
+          <button class="btn" id="button4-1" onclick="checkAnswer4(this)">Button 1</button>
+          <button class="btn" id="button4-2" onclick="checkAnswer4(this)">Button 2</button>
+          <button class="btn" id="button4-3" onclick="checkAnswer4(this)">Button 3</button>
+          <button class="btn" id="button4-4" onclick="checkAnswer4(this)">Button 4</button>
+          </div>
+        <!--05-->
+        <div>Question 05 goes here</div>
+        
+        <div class="btn-grid">
+          <button class="btn" id="button5-1" onclick="checkAnswer5(this)">Button 1</button>
+          <button class="btn" id="button5-2" onclick="checkAnswer5(this)">Button 2</button>
+          <button class="btn" id="button5-3" onclick="checkAnswer5(this)">Button 3</button>
+          <button class="btn" id="button5-4" onclick="checkAnswer5(this)">Button 4</button>
+          </div>
+        <!--06-->
+        <div>Question 06 goes here</div>
+        
+        <div class="btn-grid">
+          <button class="btn" id="button6-1" onclick="checkAnswer6(this)">Button 1</button>
+          <button class="btn" id="button6-2" onclick="checkAnswer6(this)">Button 2</button>
+          <button class="btn" id="button6-3" onclick="checkAnswer6(this)">Button 3</button>
+          <button class="btn" id="button6-4" onclick="checkAnswer6(this)">Button 4</button>
+          </div>
+        <!--07-->
+        <div>Question 07 goes here</div>
+        
+        <div class="btn-grid">
+          <button class="btn" id="button7-1" onclick="checkAnswer7(this)">Button 1</button>
+          <button class="btn" id="button7-2" onclick="checkAnswer7(this)">Button 2</button>
+          <button class="btn" id="button7-3" onclick="checkAnswer7(this)">Button 3</button>
+          <button class="btn" id="button7-4" onclick="checkAnswer7(this)">Button 4</button>
+          </div>
+        <!--08-->
+        <div>Question 08 goes here</div>
+        
+        <div class="btn-grid">
+          <button class="btn" id="button8-1" onclick="checkAnswer8(this)">Button 1</button>
+          <button class="btn" id="button8-2" onclick="checkAnswer8(this)">Button 2</button>
+          <button class="btn" id="button8-3" onclick="checkAnswer8(this)">Button 3</button>
+          <button class="btn" id="button8-4" onclick="checkAnswer8(this)">Button 4</button>
+          </div>
+        <!--09-->
+        <div>Question 09 goes here</div>
+        
+        <div class="btn-grid">
+          <button class="btn" id="button9-1" onclick="checkAnswer9(this)">Button 1</button>
+          <button class="btn" id="button9-2" onclick="checkAnswer9(this)">Button 2</button>
+          <button class="btn" id="button9-3" onclick="checkAnswer9(this)">Button 3</button>
+          <button class="btn" id="button9-4" onclick="checkAnswer9(this)">Button 4</button>
+          </div>
+        <!--10-->
+        <div>Question 10 goes here</div>
+        
+        <div class="btn-grid">
+          <button class="btn" id="button10-1" onclick="checkAnswer10(this)">Button 1</button>
+          <button class="btn" id="button10-2" onclick="checkAnswer10(this)">Button 2</button>
+          <button class="btn" id="button10-3" onclick="checkAnswer10(this)">Button 3</button>
+          <button class="btn" id="button10-4" onclick="checkAnswer10(this)">Button 4</button>
+         </div>
+		<p><br><br><br></p>
+
+
+		<!--popup-->
+		<div id="overlay"></div>
+		<div id="popup">
+		  <div class="popupcontrols">
+			<span id="popupclose">X</span>
+			</div>
+		  <div class="popupcontent">
+			<h3><b>Congratulations, Quiz Completed!</b></h3>
+			<p>Questions: 10</p>
+			<p id="rslt">  </p>
+			<p id="rslt2">  </p>
+			</div>
+		  </div>
+
+		<!--timer-->
+		<div class="top-bar">
+		  <p id="timer">Time remaining: 60 seconds</p>
+		  <div id="maincontent">
+			<button class="btn" type="submit" id="submit-btn" value="Submit">Submit</button>
+			</div>
+		</div>
+        </div>
+    </div>
+
+	<!--theme switcher-->
+	<div class="theme-switcher">
+    <input type="checkbox" id="switcher">
+    <label for="switcher"></label>
+  	</div>
+	<script src="script.js"></script>
+</body>
+</html>
