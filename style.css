@@ -39,7 +39,7 @@
 }
 
 /* When the screen is less than 600 pixels wide, hide all links, except for the first one ("Home"). Show the link that contains should open and close the topnav (.icon) */
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 900px) {
 	.topnav a:not(:first-child) {display: none;}
 	.topnav a.icon {
 		float: right;
@@ -48,7 +48,7 @@
 }
 
 /* The "responsive" class is added to the topnav with JavaScript when the user clicks on the icon. This class makes the topnav look good on small screens (display the links vertically instead of horizontally) */
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 900px) {
 	.topnav.responsive {position: relative;}
 	.topnav.responsive a.icon {
 		position: absolute;
@@ -62,16 +62,100 @@
   }
 }
 
+/* Tooltip */
+@keyframes tooltipFadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+.tooltip {
+  display: inline-flex;
+  flex-direction: column;
+  justify-content: center;
+  color: blue;
+  border-bottom: 1px dotted;
+  position: relative;
+}
+
+.tooltip__label {
+  &:before { /* for the help cursor*/
+    content: '';
+    display: flex;
+    cursor: help;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 3;
+  }
+}
+
+.tooltip-dropdown {
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 2;
+  padding-top: 32px;
+}
+
+.tooltip-dropdown__content {
+  color: var(--color-4);
+  background-color: var(--color-3);
+  box-shadow: 0px 0px 20px #888888;
+  border-radius: 4px;
+  padding: 8px 12px;
+  width: 600px;
+  text-align: justify;
+}
+
+.tooltip--open {
+  .tooltip-dropdown {
+    animation: tooltipFadeIn 0.15s;
+    display: block;
+  }
+}
+
+@media (hover: hover) {
+  .tooltip:hover {
+    .tooltip-dropdown {
+      animation: tooltipFadeIn 0.15s;
+      display: block;
+    }
+  }
+}
+
+.tooltip-img{
+    max-width: 50%; 
+    float: left; 
+    z-index: 2;
+    padding:0px 15px 15px 0px;
+}
+@media screen and (max-width: 900px){
+    .tooltip-img{
+        max-width: 100%; 
+        float: none;
+        padding:0px 0px 5px 0px;
+    }
+}
+
 /*body */
 
 * {
 	padding: 0;
+    max-width: 100vw;
 	margin: 0;
 	box-sizing: border-box;
 }
 body {
 	font-family: Arial, sans-serif;
 	color: var(--color-4);
+	overflow-x: hidden; /* Add this line to remove scroll bars */
 }
 body[data-theme="light"] {
 	--color-1: #C4DCF1;
@@ -87,6 +171,7 @@ body[data-theme="dark"] {
 	--color-4: #BABACA;
 	--color-5: #333740;
 }
+
 .background {
 	background-color: var(--color-5);
 	margin: 0 auto;
@@ -96,25 +181,80 @@ body[data-theme="dark"] {
 	width: 90%;
 	margin: 0 auto;
 	background-color: var(--color-2);
-	border-radius: 8px;
 	padding: 20px;
     padding-top: 50px;
 	max-width: 90%;
 	min-height: 100vh;
   	text-align: center;
 }
+.main-image{
+    width: 95%;
+    display: inline-block;
+    margin: 10px;
+}
+.sub-image{
+    width: 30vw;
+    display: inline-block;
+    float: left;
+    margin: 20px;
+    margin-bottom: 10px;
+}
+@media screen and (max-width: 900px){
+    .sub-image{
+        width: 80vw;
+        display: inline-block;
+        float: none;
+    }
+}
+.content {
+    min-height: 110vh;/*used to make content div hight same as the floating img*/
+}
 h1 {
-	font-weight: 500;
+	font-weight: bold;
 	font-size: 3em;
   	margin-top: 50px;
 }
-p {
+
+
+h2{
+    font-weight: bold;
+    margin: 20px;
+    text-align: left;
+}
+h3{
+    font-weight: bold;
+    margin: 20px;
+    margin-left: 30px;
+    text-align: left;
+}
+ul{
+    list-style-type:disc; 
+    margin-left: 50px; 
+    text-align: left; 
+    font-size: 18px;
+}
+a {
+    color: var(--color-4);
+}
+.parah {
+	margin: 10px;
+    margin-left: 20px;
+    margin-right: 20px;
+	font-size: 18px;
+	font-weight: 500;
+	letter-spacing: 1px;
+	line-height: 25px;
+    text-align:justify;
+}
+.p-center{
 	margin-top: 10px;
-	font-size: 16px;
+	font-size: 18px;
 	font-weight: 500;
 	letter-spacing: 1px;
 	line-height: 25px;
 }
+
+/*theme switcher*/
 .theme-switcher {
 	position: fixed;
 	right: 30px;
@@ -154,7 +294,7 @@ input:checked + label::after {
 	background-color: aliceblue;
 }
 input:checked + label {
-	background-color: rgb(25, 26, 37);
+	background-color: #191A25;
 	border: 2px solid whitesmoke;
 }
 
@@ -232,7 +372,7 @@ input:checked + label {
 	margin: 20px 0;
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 900px) {
 	.btn-grid {
 		grid-template-columns: repeat(1, auto);
 	}
@@ -274,7 +414,7 @@ input:checked + label {
 		grid-template-columns: repeat(2, auto);
 	}
 }
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 900px) {
 	.img-container {
 		grid-template-columns: repeat(1, auto);
 	}
