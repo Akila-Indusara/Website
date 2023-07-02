@@ -77,7 +77,7 @@
   display: inline-flex;
   flex-direction: column;
   justify-content: center;
-  color: blue;
+  color: #9B2323;
   border-bottom: 1px dotted;
   position: relative;
 }
@@ -95,23 +95,24 @@
 }
 
 .tooltip-dropdown {
-  display: none;
-  position: absolute;
-  top: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  z-index: 2;
-  padding-top: 32px;
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 2;
+    padding-top: 32px;
 }
 
 .tooltip-dropdown__content {
-  color: var(--color-4);
-  background-color: var(--color-3);
-  box-shadow: 0px 0px 20px #888888;
-  border-radius: 4px;
-  padding: 8px 12px;
-  width: 600px;
-  text-align: justify;
+    color: var(--color-4);
+    background-color: var(--color-3);
+    box-shadow: 0px 0px 20px #888888;
+    border-radius: 4px;
+    padding: 8px 12px;
+    width: 600px;
+    min-height: 400px;
+    text-align: justify;
 }
 
 .tooltip--open {
@@ -131,7 +132,7 @@
 }
 
 .tooltip-img{
-    max-width: 50%; 
+    max-width: 300px; 
     float: left; 
     z-index: 2;
     padding:0px 15px 15px 0px;
@@ -171,7 +172,12 @@ body[data-theme="dark"] {
 	--color-4: #BABACA;
 	--color-5: #333740;
 }
-
+footer {
+  text-align: center;
+  padding: 10px;
+  background-color: var(--color-1);
+  color: var(--color-4);
+}
 .background {
 	background-color: var(--color-5);
 	margin: 0 auto;
@@ -266,7 +272,7 @@ input {
 	display: none;
 	visibility: hidden;
 }
-label {
+.theme-label {
 	cursor: pointer;
 	display: block;
 	text-indent: -9999px;
@@ -276,7 +282,7 @@ label {
 	background-color: #8C8C8C;
 	transition: 0.5s ease background-color;
 }
-label::after {
+.theme-label::after {
 	position: absolute;
 	content: "";
 	width: 20px;
@@ -296,18 +302,6 @@ input:checked + label::after {
 input:checked + label {
 	background-color: #191A25;
 	border: 2px solid whitesmoke;
-}
-
-.excellent{
-	color:green;
-}
-
-.good{
-	color:orange;
-}
-
-.bad{
-	color:red;
 }
 
 #overlay {
@@ -451,4 +445,64 @@ input:checked + label {
     -ms-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%);
     text-align: center;
+}
+
+/*custom select  www.w3schools.com*/
+.custom-select {
+  position: relative;
+}
+
+.custom-select select {
+  display: none; /*hide original SELECT element:*/
+}
+
+.select-selected {
+  background-color: var(--color-4);
+}
+
+/*style the arrow inside the select element:*/
+.select-selected:after {
+  position: absolute;
+  content: "";
+  top: 14px;
+  right: 10px;
+  width: 0;
+  height: 0;
+  border: 6px solid transparent;
+  border-color: #fff transparent transparent transparent;
+}
+
+/*point the arrow upwards when the select box is open (active):*/
+.select-selected.select-arrow-active:after {
+  border-color: transparent transparent #fff transparent;
+  top: 7px;
+}
+
+/*style the items (options), including the selected item:*/
+.select-items div,.select-selected {
+  color: #ffffff;
+  padding: 8px 16px;
+  border: 1px solid transparent;
+  border-color: transparent transparent rgba(0, 0, 0, 0.1) transparent;
+  cursor: pointer;
+  user-select: none;
+}
+
+/*style items (options):*/
+.select-items {
+  position: absolute;
+  background-color: var(--color-4);
+  top: 100%;
+  left: 0;
+  right: 0;
+  z-index: 99;
+}
+
+/*hide the items when the select box is closed:*/
+.select-hide {
+  display: none;
+}
+
+.select-items div:hover, .same-as-selected {
+  background-color: rgba(0, 0, 0, 0.1);
 }
