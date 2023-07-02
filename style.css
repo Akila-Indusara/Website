@@ -173,10 +173,10 @@ body[data-theme="dark"] {
 	--color-5: #333740;
 }
 footer {
-  text-align: center;
-  padding: 10px;
-  background-color: var(--color-1);
-  color: var(--color-4);
+    text-align: center;
+    padding: 12px;
+    background-color: var(--color-1);
+    color: var(--color-4);
 }
 .background {
 	background-color: var(--color-5);
@@ -190,7 +190,7 @@ footer {
 	padding: 20px;
     padding-top: 50px;
 	max-width: 90%;
-	min-height: 100vh;
+	min-height: 94vh;
   	text-align: center;
 }
 .main-image{
@@ -464,23 +464,23 @@ input:checked + label {
 .select-selected:after {
   position: absolute;
   content: "";
-  top: 14px;
+  top: 18px;
   right: 10px;
   width: 0;
   height: 0;
   border: 6px solid transparent;
-  border-color: #fff transparent transparent transparent;
+  border-color: var(--color-3) transparent transparent transparent;
 }
 
 /*point the arrow upwards when the select box is open (active):*/
 .select-selected.select-arrow-active:after {
-  border-color: transparent transparent #fff transparent;
-  top: 7px;
+  border-color: transparent transparent var(--color-3) transparent;
+  top: 11px;
 }
 
 /*style the items (options), including the selected item:*/
 .select-items div,.select-selected {
-  color: #ffffff;
+  color: var(--color-3);
   padding: 8px 16px;
   border: 1px solid transparent;
   border-color: transparent transparent rgba(0, 0, 0, 0.1) transparent;
@@ -496,6 +496,8 @@ input:checked + label {
   left: 0;
   right: 0;
   z-index: 99;
+  max-height: 200px; /* set a maximum height for the scrollable options */
+  overflow-y: auto; /* enable vertical scrolling */
 }
 
 /*hide the items when the select box is closed:*/
