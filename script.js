@@ -131,6 +131,7 @@ window.onload = function() {
         if (remainingTime == 0) {
             clearInterval(countdown);
             document.getElementById("submit-btn").click();
+            localStorage.setItem("remainingTime", 60);
         }
         localStorage.setItem("remainingTime", remainingTime);
     }, 1000);

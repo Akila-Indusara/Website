@@ -9,14 +9,24 @@
     z-index: 999;
 	
 }
+.topnav-logo{
+    padding: 0 !important;
+    float: left !important;
+}
+@media screen and (max-width: 900px) {
+    .topnav-logo{
+        padding: 0 !important;
+        float: right !important;
+    }
+}
 
 /* Style the links inside the navigation bar */
 .topnav a {
-	float: left;
+	float: right;
 	display: block;
 	color: #f2f2f2;
 	text-align: center;
-	padding: 14px 16px;
+	padding: 30px;
 	text-decoration: none;
 	font-size: 17px;
 }
@@ -42,7 +52,7 @@
 @media screen and (max-width: 900px) {
 	.topnav a:not(:first-child) {display: none;}
 	.topnav a.icon {
-		float: right;
+		float: left;
 		display: block;
   }
 }
@@ -77,8 +87,7 @@
   display: inline-flex;
   flex-direction: column;
   justify-content: center;
-  color: #9B2323;
-  border-bottom: 1px dotted;
+  color: var(--color-6);
   position: relative;
 }
 
@@ -164,6 +173,7 @@ body[data-theme="light"] {
 	--color-3: white;
 	--color-4: #50526E;
 	--color-5: #A4C8FF;
+    --color-6: #057ADC;
 }
 body[data-theme="dark"] {
 	--color-1: #1e1f26;
@@ -171,6 +181,7 @@ body[data-theme="dark"] {
 	--color-3: #27282A;
 	--color-4: #BABACA;
 	--color-5: #333740;
+    --color-6: #9B2323;
 }
 footer {
     text-align: center;
@@ -239,9 +250,25 @@ ul{
     text-align: left; 
     font-size: 18px;
 }
-a {
+a:link, a:visited {
     color: var(--color-4);
 }
+a:hover {
+    color: var(--color-6);
+}
+
+iframe {
+    width: 90%;
+    height: 640px;
+}
+@media screen and (max-width: 900px){
+    iframe {
+    width: 90%;
+    height: 360px;
+}
+}
+
+
 .parah {
 	margin: 10px;
     margin-left: 20px;
@@ -413,18 +440,39 @@ input:checked + label {
 		grid-template-columns: repeat(1, auto);
 	}
 }
+.cast-container{
+	display: grid;
+	grid-template-columns: repeat(7, auto);
+    gap: 20px;
+    justify-content: center;
+}
+@media screen and (max-width: 1350px) {
+	.cast-container {
+		grid-template-columns: repeat(5, auto);
+	}
+}
+@media screen and (max-width: 980px) {
+	.cast-container {
+		grid-template-columns: repeat(3, auto);
+	}
+}
+@media screen and (max-width: 585px) {
+	.cast-container {
+		grid-template-columns: repeat(1, auto);
+	}
+}
 
 .overlay {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  height: 100%;
-  width: 100%;
-  opacity: 0;
-  transition: .5s ease;
-  background-color: #008CBA;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 100%;
+    width: 100%;
+    opacity: 0;
+    transition: .5s ease;
+    background-color: #008CBA;
 }
 
 .student-container {
@@ -435,76 +483,102 @@ input:checked + label {
     opacity: 0.9;
 }
 
-.text {
-    color: white;
-    font-size: 20px;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    -webkit-transform: translate(-50%, -50%);
-    -ms-transform: translate(-50%, -50%);
-    transform: translate(-50%, -50%);
-    text-align: center;
-}
-
 /*custom select  www.w3schools.com*/
 .custom-select {
-  position: relative;
+    position: relative;
 }
 
 .custom-select select {
-  display: none; /*hide original SELECT element:*/
+    display: none; /*hide original SELECT element:*/
 }
 
 .select-selected {
-  background-color: var(--color-4);
+    background-color: var(--color-4);
 }
 
 /*style the arrow inside the select element:*/
 .select-selected:after {
-  position: absolute;
-  content: "";
-  top: 18px;
-  right: 10px;
-  width: 0;
-  height: 0;
-  border: 6px solid transparent;
-  border-color: var(--color-3) transparent transparent transparent;
+    position: absolute;
+    content: "";
+    top: 18px;
+    right: 10px;
+    width: 0;
+    height: 0;
+    border: 6px solid transparent;
+    border-color: var(--color-3) transparent transparent transparent;
 }
 
 /*point the arrow upwards when the select box is open (active):*/
 .select-selected.select-arrow-active:after {
-  border-color: transparent transparent var(--color-3) transparent;
-  top: 11px;
+    border-color: transparent transparent var(--color-3) transparent;
+    top: 11px;
 }
 
 /*style the items (options), including the selected item:*/
 .select-items div,.select-selected {
-  color: var(--color-3);
-  padding: 8px 16px;
-  border: 1px solid transparent;
-  border-color: transparent transparent rgba(0, 0, 0, 0.1) transparent;
-  cursor: pointer;
-  user-select: none;
+    color: var(--color-3);
+    padding: 8px 16px;
+    border: 1px solid transparent;
+    border-color: transparent transparent rgba(0, 0, 0, 0.1) transparent;
+    cursor: pointer;
+    user-select: none;
 }
 
 /*style items (options):*/
 .select-items {
-  position: absolute;
-  background-color: var(--color-4);
-  top: 100%;
-  left: 0;
-  right: 0;
-  z-index: 99;
-  max-height: 200px; /* set a maximum height for the scrollable options */
-  overflow-y: auto; /* enable vertical scrolling */
+    position: absolute;
+    background-color: var(--color-4);
+    top: 100%;
+    left: 0;
+    right: 0;
+    z-index: 99;
+    max-height: 200px; /* set a maximum height for the scrollable options */
+    overflow-y: auto; /* enable vertical scrolling */
 }
 
 /*hide the items when the select box is closed:*/
 .select-hide {
-  display: none;
+    display: none;
 }
 
 .select-items div:hover, .same-as-selected {
-  background-color: rgba(0, 0, 0, 0.1);
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+.banner{
+    width: 255px; 
+    text-align: left; 
+    border: var(--color-4);
+    border-style:solid; 
+    border-radius: 21px;
+}
+.banner p {
+    padding: 10px;
+}
+.banner:hover {
+    background-color:  var(--color-1);
+}
+.cast {
+    width: 154.5px; 
+    height: 290px;
+    text-align: left; 
+    border: var(--color-4);
+    border-style:solid; 
+    border-radius: 14px;
+}
+.cast p {
+    padding: 10px;
+}
+.banner:hover {
+    background-color:  var(--color-1);
+}
+.cast-chara {
+    position: absolute;
+    left: 13px;
+    bottom: 5px;
+    white-space: nowrap; 
+    width: 150px; 
+    padding-top: 0px; 
+    overflow: hidden; 
+    text-overflow: ellipsis;
 }
