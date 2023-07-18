@@ -183,6 +183,22 @@ body[data-theme="dark"] {
 	--color-5: #333740;
     --color-6: #9B2323;
 }
+body[data-theme="colorful"] {
+	--color-1: #400037;
+	--color-2: #AE007D;
+	--color-3: #2B1525;
+	--color-4: white;
+	--color-5: #4D1835;
+    --color-6: #FFFD00;
+}
+body[data-theme="random"]:root {
+    --color-1: #1e1f26;
+	--color-2: #292c33;
+	--color-3: #27282A;
+	--color-4: #BABACA;
+	--color-5: #333740;
+    --color-6: #9B2323;
+}
 footer {
     text-align: center;
     padding: 12px;
@@ -290,7 +306,7 @@ iframe {
 /*theme switcher*/
 .theme-switcher {
 	position: fixed;
-	right: 30px;
+	right: 10px;
 	bottom: 10px;
 }
 input {
@@ -304,10 +320,11 @@ input {
 	display: block;
 	text-indent: -9999px;
 	height: 30px;
-	width: 60px;
-	border-radius: 50px;
+	width: 30px;
 	background-color: #8C8C8C;
+    border: 2px solid black;
 	transition: 0.5s ease background-color;
+    position: relative;
 }
 .theme-label::after {
 	position: absolute;
@@ -315,20 +332,26 @@ input {
 	width: 20px;
 	height: 20px;
 	border-radius: 50px;
-	top: 50%;
-	left: 5px;
-	transform: translateY(-50%);
+	top: 4px;
+	left: 4px;
 	background-color: #2E2A44;
-	transition: 0.5s ease;
-}
-input:checked + label::after {
-	/* left: calc(100% - 2.5px); */
-	left: calc(100% - 25px);
-	background-color: aliceblue;
 }
 input:checked + label {
-	background-color: #191A25;
+	background-color: #4F5170;
 	border: 2px solid whitesmoke;
+}
+input[value="light"] + label::after {
+    background-color: #F8F8F8;
+}
+input[value="dark"] + label::after {
+    background-color: #2E2A44;
+}
+input[value="colorful"] + label::after {
+    background-color: #CC00B9;
+}
+input[value="random"] + label::after {
+    background-color: #00D6FF; /* For browsers that do not support gradients */
+    background-image: conic-gradient(#ff0000 ,#ff0d00 ,#ff1a00 ,#ff2600 ,#ff3300 ,#ff4000 ,#ff4c00 ,#ff5900 ,#ff6600 ,#ff7300 ,#ff8000 ,#ff8c00 ,#ff9900 ,#ffa600 ,#ffb200 ,#ffbf00 ,#ffcc00 ,#ffd900 ,#ffe600 ,#fff200 ,#ffff00 ,#ffff00 ,#f2f900 ,#e6f200 ,#d9ec00 ,#cce600 ,#bfdf00 ,#b2d900 ,#a6d300 ,#99cc00 ,#8cc600 ,#80c000 ,#73b900 ,#66b300 ,#59ac00 ,#4da600 ,#40a000 ,#339900 ,#269300 ,#198d00 ,#0d8600 ,#008000 ,#008000 ,#00860d ,#008b1a ,#009126 ,#009633 ,#009c40 ,#00a14c ,#00a759 ,#00ac66 ,#00b273 ,#00b880 ,#00bd8c ,#00c399 ,#00c8a6 ,#00ceb2 ,#00d3bf ,#00d9cc ,#00ded9 ,#00e4e6 ,#00e9f2 ,#00efff ,#00efff ,#00e3ff ,#00d7ff ,#00cbff ,#00bfff ,#00b3ff ,#00a7ff ,#009bff ,#008fff ,#0083ff ,#0078ff ,#006cff ,#0060ff ,#0054ff ,#0048ff ,#003cff ,#0030ff ,#0024ff ,#0018ff ,#000cff ,#0000ff ,#0000ff ,#0800fa ,#0f00f4 ,#1600ef ,#1e00ea ,#2600e5 ,#2d00e0 ,#3400da ,#3c00d5 ,#4400d0 ,#4b00ca ,#5200c5 ,#5a00c0 ,#6200bb ,#6900b6 ,#7000b0 ,#7800ab ,#8000a6 ,#8700a0 ,#8e009b ,#960096 ,#960096 ,#9b028e ,#a00387 ,#a60580 ,#ab0678 ,#b00870 ,#b60969 ,#bb0b62 ,#c00c5a ,#c50e52 ,#ca104b ,#d01144 ,#d5133c ,#da1434 ,#e0162d ,#e51726 ,#ea191e ,#ef1a17 ,#f41c0f ,#fa1d08 ,#ff1f00);
 }
 
 #overlay {

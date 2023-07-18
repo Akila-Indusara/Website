@@ -9,7 +9,7 @@
     <!-- Load an icon library to show a hamburger menu (bars) on small screens -->
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
-<body data-theme="light">
+<body data-theme="dark">
 	<div class="topnav" id="myTopnav">
         <a class="topnav-logo"><img style="max-height: 80px; padding: 0;" alt="logo" src= "../nav_bar_logo.png"></a>
         <a href="#">Home</a>
@@ -23,7 +23,7 @@
     <div class="background">
       <div class="container">
         <h1>Quiz</h1>
-        <div class="parah" style="color: red; font-weight: bold;">WARNING! If you close the window without submitting the timer will not reset</div>
+        <div class="parah" style="color: red; font-weight: bold;">WARNING! If you close the window without submitting, the timer will not reset</div>
         <div id="quiz-container">
             <!--questions go here-->
         </div>
@@ -55,11 +55,17 @@
         <p>&copy; Copyright 2023, IIT | Page Editor: <a style="text-decoration: none; color: #9B2323;" href="#pageEditor">Akila Indusara</a></p>
     </footer>
     </div>
-	<!--theme switcher-->
-	<div class="theme-switcher">
-    <input type="checkbox" id="switcher">
-    <label class="theme-label" for="switcher"></label>
-  	</div>
+	<!-- Theme switcher -->
+    <div class="theme-switcher">
+        <input type="radio" id="switcher-light" name="theme-switcher" value="light" checked>
+        <label class="theme-label" for="switcher-light">Light</label>
+        <input type="radio" id="switcher-dark" name="theme-switcher" value="dark">
+        <label class="theme-label" for="switcher-dark">Dark</label>
+        <input type="radio" id="switcher-colorful" name="theme-switcher" value="colorful">
+        <label class="theme-label" for="switcher-colorful">Colorful</label>
+        <input type="radio" id="switcher-random" name="theme-switcher" value="random">
+        <label class="theme-label" for="switcher-random">Random</label>
+    </div>
 	<script src="script.js"></script>
     
 </body>

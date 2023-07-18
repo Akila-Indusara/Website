@@ -14,7 +14,7 @@
         <a class="topnav-logo"><img style="max-height: 80px; padding: 0;" alt="logo" src= "../nav_bar_logo.png"></a>
         <a href="#home">Home</a>
         <a href="#news">News</a>
-        <a href="Quiz_details.html" class="active">Quiz</a>
+        <a href="Quiz_details.html" class="active">Quiz Details</a>
         <a href="About_Us.html">About Us</a>
         <a href="javascript:void(0);" class="icon" onclick="myFunction()">
         <i class="fa fa-bars"></i>
@@ -22,9 +22,20 @@
 	</div>
     <div class="background">
       <div class="container">
-          <h1>Quiz</h1>
+          <h1>Quiz Details</h1>
           <div class="parah"><br>Details here bla bla bla bla bla bla bla bla bla bla 
               <form style="text-align: left; padding: inherit;" id="quizForm">
+                  <br>
+                <label for="qCount">Category:</label>
+                <div class="custom-select"  style="width:200px;">
+                    <select id="categ" name="category">
+                        <option value="1">Fantasy</option>
+                        <option value="1">Fantasy</option>
+                        <option value="2">Other</option>
+                        <!-- Add more options for different question counts -->
+                    </select>
+                </div>
+                  <br>
                 <label for="qCount">Number of Questions:</label>
                 <div class="custom-select"  style="width:200px;">
                     <select id="qCount" name="questionCount">
@@ -50,7 +61,7 @@
                         <option value="19">19 Questions</option>
                         <option value="20">20 Questions</option>
                         <!-- Add more options for different question counts -->
-                      </select>
+                    </select>
                 </div>
                 <br><br>
                 <button class="btn" type="submit">Start Quiz</button>
@@ -61,18 +72,25 @@
         <p>&copy; Copyright 2023, IIT | Page Editor: <a style="text-decoration: none; color: #9B2323;" href="#pageEditor">Akila Indusara</a></p>
     </footer>
     </div>
-	<!--theme switcher-->
-	<div class="theme-switcher">
-    <input type="checkbox" id="switcher">
-    <label class="theme-label" for="switcher"></label>
-	</div>
+	<!-- Theme switcher -->
+    <div class="theme-switcher">
+        <input type="radio" id="switcher-light" name="theme-switcher" value="light" checked>
+        <label class="theme-label" for="switcher-light">Light</label>
+        <input type="radio" id="switcher-dark" name="theme-switcher" value="dark">
+        <label class="theme-label" for="switcher-dark">Dark</label>
+        <input type="radio" id="switcher-colorful" name="theme-switcher" value="colorful">
+        <label class="theme-label" for="switcher-colorful">Colorful</label>
+        <input type="radio" id="switcher-random" name="theme-switcher" value="random">
+        <label class="theme-label" for="switcher-random">Random</label>
+    </div>
     <script>
-        //get number of questions from user and redirect
+        //get number of questions from user and redirect with it in the url
         document.getElementById("quizForm").addEventListener("submit", function(event) {
-          event.preventDefault();
-          var questionCount = document.getElementById("qCount").value;
-          var url = "quiz.html?questionCount=" + questionCount;
-          window.open(url, "_blank");
+            event.preventDefault();
+            let questionCount = document.getElementById("qCount").value;
+            let category = document.getElementById("categ").value;
+            let url = "quiz.html?category=" + category + "&questionCount=" + questionCount;
+            window.open(url, "_blank");
         });
     </script>
     <!--custom select www.w3schools.com-->

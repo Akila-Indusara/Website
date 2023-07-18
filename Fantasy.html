@@ -9,7 +9,7 @@
     <!-- Load an icon library to show a hamburger menu (bars) on small screens -->
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
-<body data-theme="light">
+<body data-theme="dark">
 	<div class="topnav" id="myTopnav">
         <a class="topnav-logo"><img style="max-height: 80px; padding: 0;" alt="logo" src= "../nav_bar_logo.png"></a>
         <a href="#home">Home</a>
@@ -22,7 +22,7 @@
 	</div>
 	<div class="background">
 	  <div class="container">
-        <div><p><br></p><h1>Fantasy Movies</h1>
+        <p><br></p><h1>Fantasy Movies</h1>
             <div class="parah"><br>
                 &nbsp;&nbsp;&nbsp;&nbsp;The fantasy movie genre is a genre of film that delves into the realm of imagination, magic, and mythical elements. It often features settings and characters that exist outside the boundaries of reality, transporting audiences to fantastical worlds filled with supernatural creatures, extraordinary powers, and epic quests. Fantasy movies are known for their imaginative storytelling, rich world-building, and larger-than-life adventures. They can encompass various subgenres, such as high fantasy, urban fantasy, or fairy tale adaptations. The genre allows filmmakers to explore themes of heroism, destiny, the battle between good and evil, and the power of imagination. Fantasy films captivate audiences by offering escapism and the opportunity to embark on extraordinary journeys beyond the confines of the everyday world.
                 <br><br>
@@ -35,8 +35,8 @@
                 <p>High Fantasy, Adventure, Action</p>
             </div>
             <div class="banner">
-                <img src="img/Fantasy/POTC.png" alt="POTC" width="250">
-                <p style="font-size: 20px; font-weight: bold;">Pirates of the Caribbean</p>
+                <a href="POTC.html"><img src="img/Fantasy/POTC.png" alt="POTC" width="250">
+                <p style="font-size: 20px; font-weight: bold;">Pirates of the Caribbean</p></a>
                 <p>Fantasy, Supernatural, Action, Swashbuckler</p>
             </div>
             <div class="banner">
@@ -61,11 +61,17 @@
     </footer>
     </div>
 
-	<!--theme switcher-->
-	<div class="theme-switcher">
-    <input type="checkbox" id="switcher">
-    <label class="theme-label" for="switcher"></label>
-  	</div>
+	<!-- Theme switcher -->
+    <div class="theme-switcher">
+        <input type="radio" id="switcher-light" name="theme-switcher" value="light" checked>
+        <label class="theme-label" for="switcher-light">Light</label>
+        <input type="radio" id="switcher-dark" name="theme-switcher" value="dark">
+        <label class="theme-label" for="switcher-dark">Dark</label>
+        <input type="radio" id="switcher-colorful" name="theme-switcher" value="colorful">
+        <label class="theme-label" for="switcher-colorful">Colorful</label>
+        <input type="radio" id="switcher-random" name="theme-switcher" value="random">
+        <label class="theme-label" for="switcher-random">Random</label>
+    </div>
 
 <script src="script.js"></script>
 </body>
