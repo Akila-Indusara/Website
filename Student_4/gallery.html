@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Gallery</title>
+    <link rel="stylesheet" type="text/css" href="style.css  ">
+    <link rel="stylesheet" href="Gallery.css">
+    <style>
+        /* Add your custom styles here */
+        .image-tooltip {
+            position: absolute;
+            display: none;
+            background-color: rgba(0, 0, 0, 0.7);
+            color: #fff;
+            padding: 5px;
+            border-radius: 5px;
+        }
+
+        /* Adjust tooltip position */
+        .image-grid img:hover + .image-tooltip {
+            display: block;
+            top: 0;
+            left: 100%;
+            transform: translate(-10px, -50%);
+        }
+        #mytn {
+            display: none;
+            position: fixed;
+            bottom: 20px;
+            right: 30px;
+            z-index: 99;
+            font-size: 18px;
+            border: none;
+            outline: none;
+            background-color: black;
+            color: white;
+            cursor: pointer;
+            padding: 15px;
+            border-radius: 4px;
+            }
+
+            #mytn:hover {
+            background-color: #555;
+            }
+        </style>
+</head>
+<body data-theme="light">
+    <div class="topnav" id="myTopnav">
+        <a class="topnav-logo" href="../Student_1/index.html">
+            <img style="max-height: 80px; padding: 0;" alt="logo" src= "nav_bar_logo.png"></a>
+        <a href="../Student_2/homepage and feedback/Home.html">Home</a>
+        <a href="../Student_2/homepage and feedback/Feedback.html">Feedback</a>
+        <a href="../Student_1/shop/shop.html">Shop</a>
+        <a href="../Student_3/Quiz_details.html">Quiz</a>
+        <a href="Sitemap.html">Site Map</a>  
+        <a href="gallery.html">Gallery</a>
+        <a href="../Student_3/About_Us.html">About Us</a>
+        <a href="javascript:void(0);" class="icon" onclick="menuMobile()">
+        <i class="fa fa-bars"></i>
+        </a>
+	</div>
+    <div class="background">
+        <!--go to top-->
+        <button onclick="topFunction()" id="toTopBtn" title="Go to top">&#129093;</button>
+    <div class="container">
+        <h1 style="color: black;">Movie Gallery</h1>  
+        <br>
+        <div style="display: flex; justify-content: flex-end; padding: 10px; position: fixed; bottom: 5px; right: 40px;">
+        <button class="increase">A+</button>
+        <button class="decrease">A-</button>
+        </div>
+        <br>
+        <main>
+            <section id="tv series">
+               <!--NEW CONTAINER-->
+                <div class="img-container">
+                    <div class="gallary-container">
+                        <img src="images/Interphone.jpg" alt="Interstellar" width="250" height="400"><!--set width here-->
+                        <div class="overlay">
+                            <div class="stu-hover">Interstellar, directed by Christopher Nolan, is a captivating sci-fi epic with mind-bending concepts, stellar performances, and breathtaking visuals. A must-see!</div>
+                        </div>
+                    </div>
+                    <div class="gallary-container">
+                        <img src="images/Inception/Icep2.jpg" alt="Inception" width="250" height="400">
+                        <div class="overlay">
+                            <div class="stu-hover"> "Inception," directed by Christopher Nolan, is a mind-bending thriller that delves into dreams and reality, leaving audiences questioning their perceptions. </div>
+                        </div>
+                    </div>
+                    <div class="gallary-container">
+                        <img src="images/Prestige/prestige.jpg" alt="Prestige" width="250" height="400">
+                        <div class="overlay" >
+                            <div class="stu-hover">"The Prestige,"  directed by Christopher Nolan, is a mesmerizing tale of rivalry and obsession among magicians, filled with twists and surprises.  </div>
+                        </div>
+                    </div>
+                    <div class="gallary-container">
+                        <img src="images/Dune/Dune2.jpg" alt="Dune" width="250" height="400">
+                        <div class="overlay">
+                            <div class="stu-hover">"Dune," based on the novel by Frank Herbert, is a visually stunning sci-fi epic with a rich, immersive world and complex themes.</div>
+                        </div>
+                    </div>
+                    <div class="gallary-container">
+                        <img src="images/imagesS3/LOTR/The_fellowship_of_the_ring.jpg" alt="LOTR" width="250" height="400">
+                        <div class="overlay">
+                            <div class="stu-hover">"Lord of the Rings," directed by Peter Jackson, is an epic fantasy trilogy with a vast world, captivating characters, and epic battles </div>
+                        </div>
+                    </div>
+                    <div class="gallary-container">
+                        <img src="images/imagesS3/POTC/The_Curse_of_the_Black_Pearl.jpg" alt="POTC" width="250" height="400">
+                        <div class="overlay">
+                            <div class="stu-hover">"Pirates of the Caribbean" is a swashbuckling adventure film series starring Johnny Depp as Captain Jack Sparrow, full of action and humor. </div>
+                        </div>
+                    </div>
+                    <div class="gallary-container">
+                        <img src="images/imagesS3/Hobbit/An_Unexpected_Journey.jpg" alt="HOBBIT" width="250" height="400">
+                        <div class="overlay">
+                            <div class="stu-hover">"The Hobbit," directed by Peter Jackson, is a fantasy adventure trilogy based on J.R.R. Tolkien's novel, preceding "Lord of the Rings." </div>
+                        </div>
+                    </div>
+                    <div class="gallary-container">
+                        <img src="images/imagesS3/Suzume/Suzume/Suzume_m.jpg" alt="" width="250" height="400">
+                        <div class="overlay">
+                            <div class="stu-hover">As the skies turn red and the planet trembles, Japan stands on the brink of disaster. However, a determined teenager named Suzume sets out on a mission to save her country.  </div>
+                        </div>
+                    </div>
+                    <div class="gallary-container">
+                        <img src="images/imagesS1/endgameGenre.jpg" alt="" width="250" height="400">
+                        <div class="overlay">
+                            <div class="stu-hover">"Avengers: Endgame" is a colossal, emotional culmination of the MCU, delivering epic battles, closure, and a heartfelt tribute to beloved characters. </div>
+                        </div>
+                    </div>
+                    <div class="gallary-container">
+                        <img src="images/imagesS1/johnWick.webp" alt="" width="250" height="400">
+                        <div class="overlay">
+                            <div class="stu-hover">"John Wick" is an action-packed film series starring Keanu Reeves as a legendary assassin seeking revenge, known for its stylish action and intense fight scenes. </div>
+                        </div>
+                    </div>
+                    <div class="gallary-container">
+                        <img src="images/imagesS1/topgunGenre.webp" alt="" width="250" height="400">
+                        <div class="overlay">
+                            <div class="stu-hover">"Top Gun" is a classic action film starring Tom Cruise as a skilled fighter pilot, known for its thrilling aerial sequences and iconic soundtrack.  </div>
+                        </div>
+                    </div>
+                    <div class="gallary-container">
+                        <img src="images/imagesS1/missionImpossibleGenre.jpeg" alt="" width="250" height="400">
+                        <div class="overlay">
+                            <div class="stu-hover">"Mission: Impossible" is a high-octane spy film franchise starring Tom Cruise, renowned for its thrilling stunts, espionage, and suspenseful plots. </div>
+                        </div>
+                    </div>
+                    <div class="gallary-container">
+                        <img src="images/imagesS2/TitanicP.jpg" alt="" width="250" height="400">
+                        <div class="overlay">
+                            <div class="stu-hover"> "Titanic," directed by James Cameron, is a timeless romantic drama set aboard the ill-fated RMS Titanic, blending tragedy, love, and breathtaking visuals. </div>
+                        </div>
+                    </div>
+                    <div class="gallary-container">
+                        <img src="images/imagesS2/breakdastT.jpg" alt="BreakfastatTiffanys" width="250" height="400">
+                        <div class="overlay">
+                            <div class="stu-hover">"Breakfast at Tiffany's" is a classic romantic comedy featuring Audrey Hepburn, known for her iconic portrayal of Holly Golightly. </div>
+                        </div>
+                    </div>
+                    <div class="gallary-container">
+                        <img src="images/imagesS2/LaLaP.jpg.webp" alt="LaLaLand" width="250" height="400">
+                        <div class="overlay">
+                            <div class="stu-hover">"La La Land" is a critically acclaimed musical film, starring Emma Stone and Ryan Gosling, celebrating dreams, love, and the magic of Hollywood.</div>
+                        </div>
+                    </div>
+                    <div class="gallary-container">
+                        <img src="images/imagesS2/NotebookP.jpg" alt="Notebook" width="250" height="400">
+                        <div class="overlay">
+                            <div class="stu-hover">"The Notebook" is a heartwarming and poignant romance film based on Nicholas Sparks' novel, capturing the enduring power of love. </div>
+                        </div>
+                    </div>
+                    
+                    
+                </div> 
+            </section>
+            </main>
+          
+            <h1>All Images</h1>
+        <div class="image-grid">
+            
+            <img class="image-grid-col-3 image-grid-row-2" src="images/Interstella1.jpg" title="interstellar" >
+            <img class="image-grid-row-2" src="images/ChrisNolan.jpg" >
+            <img class="image-grid-row-2" src="images/MaMc.png">
+            <img class="image-grid-row-2" src="images/Emma Thomas.jpeg" >
+            <img  src="images/Warnerbros.png" >
+            <img  src="images/Paramount.jpg" >
+            <img class="image-grid-row-2" src="images/HanSZIMMER.jpeg">
+            <img class="image-grid-row-2" src="images/JessicaC.png" >
+            <img  class="image-grid-row-2" src="images/AnneHs.png" >
+            <img class="image-grid-row-2" src="images/MCane.png">
+            <img class="image-grid-row-2" src="images/Timothee.png" alt="architecture">
+            <img  class="image-grid-row-2" src="images/Inception/leonardo.png" >
+            <img class="image-grid-row-4 image-grid-col-2" src="images/Interphone.jpg">
+            <img class="image-grid-col-2" src="images/Inception/Syncopy.jpg" >
+            <img class="image-grid-col-2 image-grid-row-2" src="images/Inception/legendary.jpg" >
+            <img class="image-grid-row-2" src="images/Inception/Cillian.png">
+            <img class="image-grid-col-3 image-grid-row-2" src="images/Inception/Incep1.jpg" >
+            <img class="image-grid-row-2" src="images/Inception/Marion.png">
+            <img class="image-grid-row-2" src="images/Inception/Hardy.png">
+            <img class="image-grid-row-4 image-grid-col-2" src="images/Inception/Icep2.jpg">
+            <img class="image-grid-col-2 image-grid-row-2" src="images/Prestige/Disney.jpeg" >
+            <img class="image-grid-col-2" src="images/Prestige/Touchstone.jpg" >
+            <img class="image-grid-col-2" src="images/Dune/PaulAtreides.webp" >
+            <img class="image-grid-col-3 image-grid-row-2" src="images/Prestige/prestige2.jpg" >
+            <img class="image-grid-row-2" src="images/Prestige/JonathanN.jpeg" >
+            <img class="image-grid-row-2" src="images/Prestige/HughJ.png" >
+            <img class="image-grid-row-2" src="images/Prestige/Bale.png" >
+            <img class="image-grid-row-2" src="images/Prestige/ScarlettJ.png" >
+            <img class="image-grid-row-2" src="images/Prestige/RebeccaHall.png" >
+            <img  class="image-grid-row-4 image-grid-col-2" src="images/Prestige/prestige.jpg" >
+            <img class="image-grid-row-2" src="images/dune/zendaya.png" >
+            <img class="image-grid-row-2" src="images/dune/jason.png" >
+            <img class="image-grid-row-2" src="images/dune/rebecca.png" >
+            <img class="image-grid-row-2" src="images/dune/Oscar.png" >
+            <img class="image-grid-col-3 image-grid-row-2" src="images/Dune/Dune1.jpg" >
+            <img class="image-grid-row-2" src="images/dune/DENNIS2.jpg" >
+            <img class="image-grid-row-2" src="images/dune/FrankH.jpeg" >
+            <img class="image-grid-col-3 image-grid-row-2" src="images/Dune/Arrakis.jpg" >
+            <img class="image-grid-row-2" src="images/dune/chalamet.jpg" >
+            <img class="image-grid-col-2 image-grid-row-2" src="images/Dune/DENNIS.jpeg" >
+            <img  src="images/imagesS2/aaaaa.jpeg" >
+            <img  src="images/imagesS2/billpaxton.jpeg" >
+            <img   class="image-grid-row-2" src="images/imagesS2/billyboi.jpeg" >
+            <img  src="images/imagesS2/boc.jpeg" >
+            <img  src="images/imagesS2/breakattif.jpeg" >
+            <img  src="images/imagesS2/bts.jpeg">
+            <img  src="images/imagesS2/caitlin.jpeg">
+            <img  class="image-grid-row-2" src="images/imagesS2/emma.jpeg">
+            <img  class="image-grid-row-2" src="images/imagesS2/gena.jpeg">
+            <img  class="image-grid-row-2" src="images/imagesS2/george.jpeg">
+            <img  class="image-grid-row-2" src="images/imagesS2/hep.jpeg">
+            <img  class="image-grid-row-2" src="images/imagesS2/james.jpeg">
+            <img  class="image-grid-row-2" src="images/imagesS2/jksimp.jpeg">
+            <img  class="image-grid-row-2" src="images/imagesS2/kate.jpeg">
+            <img  class="image-grid-row-2" src="images/imagesS2/john.jpeg">
+            <img  class="image-grid-row-2" src="images/imagesS2/joan.jpeg">
+            <img  class="image-grid-row-2" src="images/imagesS2/Katiebatie.jpeg">
+            <img  class="image-grid-row-2" src="images/imagesS2/laaaaa.jpeg">
+            <img  class="image-grid-row-2" src="images/imagesS2/lalaby.jpeg">
+            <img  src="images/imagesS2/lalalaal.jpeg">
+            <img  src="images/imagesS2/lalla.jpeg">
+            <img  src="images/imagesS2/land.jpeg">
+            <img  class="image-grid-row-2" src="images/imagesS2/leonardo.jpeg">
+            <img  class="image-grid-row-2" src="images/imagesS2/OIP.jpeg">
+            <img  class="image-grid-row-2" src="images/imagesS2/oml.jpeg">
+            <img  class="image-grid-row-2" src="images/imagesS2/patric.jpeg">
+            <img  class="image-grid-col-2" src="images/imagesS2/ppp.jpeg">
+            <img  class="image-grid-row-2" src="images/imagesS2/rach.jpeg">
+            <img   src="images/imagesS2/roony.jpeg">
+            <img  class="image-grid-row-2" src="images/imagesS2/ryan.jpeg">
+            <img   src="images/imagesS2/tiff.jpeg">
+            <img  class="image-grid-row-2" src="images/imagesS2/tipitipi.jpeg">
+            <img  class="image-grid-col-2 image-grid-row-2" src="images/imagesS2/titanic2.jpeg">
+            <img   src="images/imagesS2/end game bags/marval bag1.jpg">
+            <img  class="image-grid-col-2 image-grid-row-2" src="images/imagesS2/wall.jpeg">
+            <img  class="image-grid-row-2"  src="images/imagesS2/end game bags/marvalbag2.jpg">
+            <img  class="image-grid-row-2" src="images/imagesS2/end game bags/marvalbag3.jpg">
+            <img   src="images/imagesS2/inception tshirt/tshirt1.jpeg">
+            <img   src="images/imagesS2/inception tshirt/tshirt2.jpeg">
+            <img   src="images/imagesS2/inception tshirt/tshirt3.jpeg">
+            <img   src="images/imagesS2/titanic necklace/necklace1.jpeg">
+            <img  class=" image-grid-row-2"  src="images/imagesS2/lotr figurings/lordof.jpeg">
+            <img  class=" image-grid-row-2"  src="images/imagesS2/lotr figurings/lotr1.jpeg">
+            <img  class=" image-grid-row-2"  src="images/imagesS2/lotr figurings/lotr3.jpeg">
+            <img   src="images/imagesS2/titanic necklace/necklace2.jpeg">
+            <img   src="images/imagesS2/titanic necklace/necklace3.jpeg">
+            <img  class="image-grid-col-2 image-grid-row-2" src="images/imagesS1/action3.jpg">
+            <img  src="images/imagesS1/Adrianne3.jpg">
+            <img  src="images/imagesS1/angela.jpeg">
+            <img  src="images/imagesS1/chris.jpeg">
+            <img  src="images/imagesS1/chrisH.jpeg">
+            <img class="image-grid-col-3 image-grid-row-2" src="images/imagesS1/diduk.webp">
+            <img   class=" image-grid-row-2" src="images/imagesS1/endgameGenre.jpg">
+            <img  class="image-grid-col-3 image-grid-row-2" src="images/imagesS1/endGameBTS.jpg">
+            <img   src="images/imagesS1/downey.jpeg">
+            <img   src="images/imagesS1/glen.jpeg">
+            <img  class="image-grid-col-3 image-grid-row-2" src="images/imagesS1/endGameMain.jpg">
+            <img   class=" image-grid-row-2" src="images/imagesS1/greg2.jpeg">
+            <img  class="image-grid-col-3 image-grid-row-2" src="images/imagesS1/ethan.webp">
+            <img  src="images/imagesS1/ian.jpeg">
+            <img  class=" image-grid-row-2" src="images/imagesS1/jen.jpeg">
+            <img  class="image-grid-col-3 image-grid-row-2" src="images/imagesS1/fallout3.jpg">
+            <img  src="images/imagesS1/fantasy.jpg">
+            <img  class="image-grid-col-2 image-grid-row-2" src="images/imagesS1/johnPuppy.webp">
+            <img  class="image-grid-col-2 image-grid-row-2" src="images/imagesS1/helicopterscene.webp">
+            <img  class="image-grid-col-4 image-grid-row-4" src="images/imagesS1/interstellar.jpg">
+            <img  class="image-grid-col-3 image-grid-row-2" src="images/imagesS1/johnwick-content.jpg">
+            <img  class="image-grid-row-2" src="images/imagesS1/johnWick.webp">
+            <img  class="image-grid-col-2 image-grid-row-2" src="images/imagesS1/johnWickCar.jpg">
+            <img  src="images/imagesS1/keanu1.jpeg">
+            <img  src="images/imagesS1/laurence.jpeg">
+            <img  src="images/imagesS1/lance.jpeg">
+            <img  src="images/imagesS1/lewis.jpeg">
+            <img  class="image-grid-col-2 image-grid-row-2" src="images/imagesS1/lalaland.jpg">
+            <img  src="images/imagesS1/miles-singing.avif">
+            <img  class=" image-grid-row-2" src="images/imagesS1/miles.jpeg">
+            <img  src="images/imagesS1/Mark.jpeg">
+            <img  class="image-grid-col-2 image-grid-row-2" src="images/imagesS1/MIBTS.jpg">
+            <img  class="image-grid-col-2 image-grid-row-4" src="images/imagesS1/topgunGenre.webp">
+            <img   class="image-grid-row-2" src="images/imagesS1/tom.webp">
+            <img   class="image-grid-row-2" src="images/imagesS1/rebecca4.jpeg">
+            <img   class="image-grid-col-2 image-grid-row-2" src="images/imagesS1/strange.webp">
+            <img  src="images/imagesS1/scarlett2.jpeg">
+            <img  src="images/imagesS1/monica.jpeg">
+            <img  src="images/imagesS1/simon3.jpeg">
+            <img  src="images/imagesS1/sean.jpeg">
+            <img  class="image-grid-col-3 image-grid-row-2" src="images/imagesS1/topgunMain.jpeg">
+            <img  src="images/imagesS1/topgun-scene.jpg">
+            <img  src="images/imagesS1/snap.jpg">
+            <img  src="images/imagesS1/tomH.jpeg">
+            <img  src="images/imagesS1/willem.jpeg">
+            <img  src="images/imagesS1/vanessa1.jpeg">
+            <img  src="images/imagesS1/missionImpossibleGenre.jpeg">
+            <img  class="image-grid-col-4 image-grid-row-4" src="images/imagesS1/topgunBTS2.webp">
+            <img class="image-grid-row-4 image-grid-col-2" src="images/imagesS3/POTC/The_Curse_of_the_Black_Pearl.jpg">
+            <img   class="image-grid-row-2" src="images/imagesS3/POTC/depp.png">
+            <img   class="image-grid-row-2" src="images/imagesS3/POTC/keira.png">
+            <img   class="image-grid-row-2" src="images/imagesS3/POTC/bill.png">
+            <img   class="image-grid-row-2" src="images/imagesS3/POTC/brenton.png">
+            <img   class="image-grid-row-2" src="images/imagesS3/POTC/gore.jpg">
+            <img   class="image-grid-row-2" src="images/imagesS3/POTC/javier.png">
+            <img   class="image-grid-row-2" src="images/imagesS3/POTC/ian.png">
+            <img   class="image-grid-row-2" src="images/imagesS3/POTC/rob.jpg">
+            <img   class="image-grid-row-2" src="images/imagesS3/POTC/rush.png">
+            <img   class="image-grid-row-2" src="images/imagesS3/POTC/stellan.png">
+            <img class="image-grid-row-4 image-grid-col-2" src="images/imagesS3/POTC/At_Worlds_End.jpg">
+            <img class="image-grid-row-4 image-grid-col-2" src="images/imagesS3/POTC/Dead_Mans_Chest.jpg">
+            <img class="image-grid-row-2 image-grid-col-2" src="images/imagesS3/POTC/POTC.jpg">
+            <img class="image-grid-row-4 image-grid-col-2" src="images/imagesS3/POTC/On_Stranger_Tides.jpg">
+            <img class="image-grid-row-4 image-grid-col-2" src="images/imagesS3/POTC/Dead_Men_Tell_No_Tales.jpg">
+            <img   class="image-grid-row-2" src="images/imagesS3/LOTR/Andy_Serkis.jpg">
+            <img   class="image-grid-row-2" src="images/imagesS3/LOTR/Andy_Serkis.png">
+            <img   class="image-grid-row-2" src="images/imagesS3/LOTR/Aragorn.jpg">
+            <img   class="image-grid-row-2" src="images/imagesS3/LOTR/Balrog.jpg">
+            <img   class="image-grid-row-2" src="images/imagesS3/LOTR/barrie.jpg">
+            <img   class="image-grid-row-2" src="images/imagesS3/LOTR/Billy_Boyd.png">
+            <img   class="image-grid-row-2" src="images/imagesS3/LOTR/Christopher_Lee.png">
+            <img   class="image-grid-row-2" src="images/imagesS3/LOTR/Dominic_Monaghan.png">
+            <img   class="image-grid-row-2" src="images/imagesS3/LOTR/Elijah_Wood.png">
+            <img   class="image-grid-row-2" src="images/imagesS3/LOTR/Eowyn.jpg">
+            <img   class="image-grid-row-2" src="images/imagesS3/LOTR/fran.jpg">
+            <img   class="image-grid-row-2" src="images/imagesS3/LOTR/Frodo.jpg">
+            <img   class="image-grid-row-2" src="images/imagesS3/LOTR/gandalf.jpg">
+            <img   class="image-grid-row-2" src="images/imagesS3/LOTR/gandalf_the_white.jpg">
+            <img   class="image-grid-row-2" src="images/imagesS3/LOTR/Gimli.jpg">
+            <img   class="image-grid-row-2" src="images/imagesS3/LOTR/Gloin.jpg">
+            <img   class="image-grid-row-2 image-grid-col-2" src="images/imagesS3/LOTR/Gollum.jpg">
+            <img   class="image-grid-row-2" src="images/imagesS3/LOTR/Ian_McKellen.png">
+            <img   class="image-grid-row-2" src="images/imagesS3/LOTR/Isildur.jpg">
+            <img   class="image-grid-row-2" src="images/imagesS3/LOTR/John_Rhys.png">
+            <img   class="image-grid-row-2" src="images/imagesS3/LOTR/Legolas.jpg">
+            <img   class="image-grid-row-2" src="images/imagesS3/LOTR/Liv_Tyler.png">
+            <img   class="image-grid-row-2" src="images/imagesS3/LOTR/Lothlorien.jpg">
+            <img   class="image-grid-row-2" src="images/imagesS3/LOTR/lotr_tooltip.jpg">
+            <img   class="image-grid-row-2" src="images/imagesS3/LOTR/LOTR_m.jpg">
+            <img   class="image-grid-row-2 image-grid-col-2" src="images/imagesS3/LOTR/LOTR.jpg">
+            <img   class="image-grid-row-2 image-grid-col-2" src="images/imagesS3/LOTR/Middle_Earth.jpg">
+            <img   class="image-grid-row-2" src="images/imagesS3/LOTR/Merry.jpg">
+            <img   class="image-grid-row-2" src="images/imagesS3/LOTR/Miranda_Otto.png">
+            <img   class="image-grid-row-2" src="images/imagesS3/LOTR/Merry.jpg">
+            <img   class="image-grid-row-2" src="images/imagesS3/LOTR/Mordor.jpg">
+            <img   class="image-grid-row-2" src="images/imagesS3/LOTR/Moria.jpg">
+            <img   class="image-grid-row-2" src="images/imagesS3/LOTR/Mount_Doom.jpg">
+            <img class="image-grid-row-4 image-grid-col-2" src="images/imagesS3/LOTR/The_fellowship_of_the_ring.jpg">
+            <img class="image-grid-col-2" src="images/imagesS3/LOTR/Sundering_of_the_Elves.png">
+            <img   class="image-grid-row-2" src="images/imagesS3/LOTR/Peter_Jackson.jpg">
+            <img   class="image-grid-row-2" src="images/imagesS3/LOTR/Pippin.jpg">
+            <img   class="image-grid-row-2" src="images/imagesS3/LOTR/Ranger.jpg">
+            <img   class="image-grid-row-2" src="images/imagesS3/LOTR/Rivendell.jpg">
+            <img   class="image-grid-row-4 image-grid-col-2" src="images/imagesS3/LOTR/The_return_of_the_king.jpg">
+            <img   class="image-grid-row-2" src="images/imagesS3/LOTR/Sam.jpg">
+            <img   class="image-grid-row-2" src="images/imagesS3/LOTR/Sauron.jpg">
+            <img   class="image-grid-row-2" src="images/imagesS3/LOTR/Sean_Astin.png">
+            <img   class="image-grid-row-2" src="images/imagesS3/LOTR/Shire.jpg">
+            <img   class="image-grid-row-2" src="images/imagesS3/LOTR/Tolkien.jpg">
+            <img   class="image-grid-row-2" src="images/imagesS3/LOTR/Viggo_Mortensen.png">
+            <img   class="image-grid-row-2" src="images/imagesS3/LOTR/Woodland_realm.jpg">
+            <img   class="image-grid-row-2" src="images/imagesS3/Hobbit/aidan.jpg">
+            <img   class="image-grid-row-4 image-grid-col-2" src="images/imagesS3/LOTR/The_two_towers.jpg">
+            <img    class="image-grid-row-4 image-grid-col-2" src="images/imagesS3/Hobbit/An_Unexpected_Journey.jpg">
+            <img   class="image-grid-row-2" src="images/imagesS3/Hobbit/benedict.jpg">
+            <img   class="image-grid-row-2" src="images/imagesS3/Hobbit/Hobbit_m.jpg">
+            <img   class="image-grid-row-2" src="images/imagesS3/Hobbit/hobbit_tooltip.jpg">
+            <img   class="image-grid-row-2" src="images/imagesS3/Hobbit/warner.jpg">
+            <img   class="image-grid-row-2 image-grid-col-2" src="images/imagesS3/Hobbit/Hobbit.jpg">
+            <img   class="image-grid-row-2" src="images/imagesS3/Hobbit/lee.jpg">
+            <img   class="image-grid-row-2" src="images/imagesS3/Hobbit/luke.jpg">
+            <img    class="image-grid-row-4 image-grid-col-2" src="images/imagesS3/Hobbit/The_Battle_of_the_Five_Armies.jpg">
+            <img    class="image-grid-row-4 image-grid-col-2" src="images/imagesS3/Hobbit/The_Desolation_of_Smaug.jpg">
+            <img    src="images/imagesS3/Suzume/Suzume/hara.png">
+            <img    src="images/imagesS3/Suzume//Suzume/hokuto.png">
+            <img   src="images/imagesS3/Suzume//Suzume/kamiki.png">
+            <img   src="images/imagesS3/Suzume//Suzume/kana.png">
+            <img   src="images/imagesS3/Suzume//Suzume/sometani.png">
+            <img   src="images/imagesS3/Suzume//Suzume/Souta.png">
+            <img class="image-grid-row-2"  src="images/imagesS3/Suzume/Suzume/Suzume_m.jpg">
+            <img class="image-grid-col-3 image-grid-row-2" src="images/imagesS3/Suzume/Suzume/Suzume.jpg" >
+            <img class="image-grid-row-2"  src="images/imagesS3/Suzume/Suzume/okabe.png">
+            <img class="image-grid-row-2"  src="images/imagesS3/Suzume/Suzume/suzume.png">
+            <img class="image-grid-row-2"  src="images/imagesS3/Suzume/Suzume/tsubame.png">
+            </div>
+    </div>
+    <footer>
+        <p>&copy; Copyright 2023, IIT | Page Editor: <a style="text-decoration: none; color: #9B2323;" href="#pageEditor">Januda Silunaka</a></p>
+    </footer>
+    </div>
+    <!-- Theme switcher -->
+    <div class="theme-switcher">
+        <input class="input-theme" type="radio" id="switcher-light" name="theme-switcher" value="light" checked>
+        <label class="theme-label" for="switcher-light">Light</label>
+        <input  class="input-theme" type="radio" id="switcher-dark" name="theme-switcher" value="dark">
+        <label class="theme-label" for="switcher-dark">Dark</label>
+        <input  class="input-theme" type="radio" id="switcher-colorful" name="theme-switcher" value="colorful">
+        <label class="theme-label" for="switcher-colorful">Colorful</label>
+        <input  class="input-theme" type="radio" id="switcher-random" name="theme-switcher" value="random">
+        <label class="theme-label" for="switcher-random">Random</label>
+    </div>
+    <script src="script.js"></script>
+    <script src="fontsize.js"></script>
+        
+</div>
+</body>
+</html>
