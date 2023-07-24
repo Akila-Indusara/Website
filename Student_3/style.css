@@ -256,8 +256,9 @@ footer {
 }
 @media screen and (max-width: 900px){
     .sub-image{
-        width: 80vw;
+        width: 90%;
         display: inline-block;
+        margin: 0;
         float: none;
     }
 }
@@ -417,7 +418,7 @@ input[value="random"] + .theme-label::after {
 	padding: 10px;
 }
 
-.top-bar {
+.bot-bar {
 	position: fixed;
 	bottom: 0;
 	left: 0;
@@ -450,7 +451,7 @@ input[value="random"] + .theme-label::after {
 	border-radius: 5px;
 	color: var(--color-3);
 	cursor: pointer;
-	font-size: 1.2em;
+	font-size: 18px;
 	padding: 10px 20px;
 	transition: background-color 0.3s ease;
 }
