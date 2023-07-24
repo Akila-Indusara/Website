@@ -215,7 +215,7 @@ window.onload = function() {
     countdown = setInterval(function() {
         remainingTime--;
         document.getElementById("timer").innerHTML = "Time remaining: " + remainingTime + " seconds";
-        if (remainingTime == 0) {
+        if (remainingTime <= 0) {
             clearInterval(countdown);
             document.getElementById("submit-btn").click();
             localStorage.setItem("remainingTime", 60);
@@ -268,120 +268,581 @@ function disableButtons(button) {
 }
 
 //questions pool
-const fantasy = [
+const other = [
   {
-    question: "Question 1",
+    question: "Which famous Hollywood actress was originally considered for the role of Holly Golightly in \"Breakfast at Tiffany's\" before Audrey Hepburn was cast?",
     answers: [
-      { id: "button1-1", text: "Answer 1" },
-      { id: "button1-2", text: "Answer 2" },
-      { id: "button1-3", text: "Answer 3" },
-      { id: "button1-4", text: "Answer 4" }
+      { id: "button1", text: "A) Marilyn Monroe" },
+      { id: "button2", text: "B) Grace Kelly" },
+      { id: "button3", text: "C) Elizabeth Taylor" },
+      { id: "button4", text: "D) Audrey Hepburn" }
     ],
-    correctAnswer: "button1-2"
+    correctAnswer: "button1"
   },
   {
-    question: "Question 2",
+    question: "In \"Titanic,\" what was the name of the ship's captain who famously shouted, \"She's made of iron, sir! I assure you she can and will sink!\"?",
     answers: [
-      { id: "button2-1", text: "Answer 1" },
-      { id: "button2-2", text: "Answer 2" },
-      { id: "button2-3", text: "Answer 3" },
-      { id: "button2-4", text: "Answer 4" }
+      { id: "button1", text: "A) Captain Charles Lightoller" },
+      { id: "button2", text: "B) Captain Thomas Andrews" },
+      { id: "button3", text: "C) Captain William Murdoch" },
+      { id: "button4", text: "D) Captain Edward James Smith" }
     ],
-    correctAnswer: "button2-4"
+    correctAnswer: "button4"
   },
   {
-    question: "Question 3",
+    question: "Which song from \"La La Land\" won the Academy Award for Best Original Song in 2017?",
     answers: [
-      { id: "button3-1", text: "Answer 1" },
-      { id: "button3-2", text: "Answer 2" },
-      { id: "button3-3", text: "Answer 3" },
-      { id: "button3-4", text: "Answer 4" }
+      { id: "button1", text: "A) \"City of Stars\"" },
+      { id: "button2", text: "B) \"Another Day of Sun\"" },
+      { id: "button3", text: "C) \"Audition (The Fools Who Dream)\"" },
+      { id: "button4", text: "D) \"Mia & Sebastian's Theme\"" }
     ],
-    correctAnswer: "button3-1"
+    correctAnswer: "button1"
   },
   {
-    question: "Question 4",
+    question: "In \"The Notebook,\" what is the name of the retirement home where elderly Allie and Noah reside?",
     answers: [
-      { id: "button4-1", text: "Answer 1" },
-      { id: "button4-2", text: "Answer 2" },
-      { id: "button4-3", text: "Answer 3" },
-      { id: "button4-4", text: "Answer 4" }
+      { id: "button1", text: "A) Creekside Manor" },
+      { id: "button2", text: "B) Rosewood Estates" },
+      { id: "button3", text: "C) Willowbrook Gardens" },
+      { id: "button4", text: "D) Shady Pines Senior Living" }
     ],
-    correctAnswer: "button4-2"
+    correctAnswer: "button1"
   },
-  {
-    question: "Question 5",
+    {
+    question: "Which iconic romantic drama is based on the sinking of the RMS Titanic?",
     answers: [
-      { id: "button5-1", text: "Answer 1" },
-      { id: "button5-2", text: "Answer 2" },
-      { id: "button5-3", text: "Answer 3" },
-      { id: "button5-4", text: "Answer 4" }
+      { id: "button1", text: "A) The Notebook" },
+      { id: "button2", text: "B) Breakfast at Tiffany's" },
+      { id: "button3", text: "C) La La Land" },
+      { id: "button4", text: "D) Titanic" }
     ],
-    correctAnswer: "button5-4"
+    correctAnswer: "button4"
   },
+    {
+    question: "In which film does Ryan Gosling's character own a jazz club and Emma Stone's character aspire to become an actress?",
+    answers: [
+      { id: "button1", text: "A) The Notebook" },
+      { id: "button2", text: "B) Breakfast at Tiffany's" },
+      { id: "button3", text: "C) La La Land" },
+      { id: "button4", text: "D) Titanic" }
+    ],
+    correctAnswer: "button3"
+  },
+    {
+    question: "Audrey Hepburn's famous little black dress is a standout fashion moment from which classic film?",
+    answers: [
+      { id: "button1", text: "A) The Notebook" },
+      { id: "button2", text: "B) Breakfast at Tiffany's" },
+      { id: "button3", text: "C) La La Land" },
+      { id: "button4", text: "D) Titanic" }
+    ],
+    correctAnswer: "button3"
+  },
+    {
+    question: "Which movie features a poignant love story set in the 1940s and centers around Noah and Allie?",
+    answers: [
+      { id: "button1", text: "A) The Notebook" },
+      { id: "button2", text: "B) Breakfast at Tiffany's" },
+      { id: "button3", text: "C) La La Land" },
+      { id: "button4", text: "D) Titanic" }
+    ],
+    correctAnswer: "button3"
+  },
+    {
+    question: "In \"La La Land,\" what type of business does Sebastian plan to open?",
+    answers: [
+      { id: "button1", text: "A) A vintage clothing store" },
+      { id: "button2", text: "B) A jazz club" },
+      { id: "button3", text: "C) A coffee shop" },
+      { id: "button4", text: "D) An art gallery" }
+    ],
+    correctAnswer: "button2"
+  },
+    {
+    question: "How many Oscars did \"Titanic\" win at the 1998 Academy Awards?",
+    answers: [
+      { id: "button1", text: "A) 7" },
+      { id: "button2", text: "B) 9" },
+      { id: "button3", text: "C) 11" },
+      { id: "button4", text: "D) 13" }
+    ],
+    correctAnswer: "button3"
+  },
+    {
+    question: "Who directed the movie \"Dune\" released in 2021?",
+    answers: [
+      { id: "button1", text: "A) Steven Spielberg" },
+      { id: "button2", text: "B) Christopher Nolan" },
+      { id: "button3", text: "C) Denis Villeneuve" },
+      { id: "button4", text: "D) James Cameron" }
+    ],
+    correctAnswer: "button3"
+  },
+    {
+    question: "What is the name of the desert planet where the story of \"Dune\" takes place?",
+    answers: [
+      { id: "button1", text: "A) Endor" },
+      { id: "button2", text: "B) Tatooine" },
+      { id: "button3", text: "C) Arrakis" },
+      { id: "button4", text: "D) Hoth" }
+    ],
+    correctAnswer: "button3"
+  },
+    {
+    question: "Who plays the character of Paul Atreides in the movie?",
+    answers: [
+      { id: "button1", text: "A) Tom Holland" },
+      { id: "button2", text: "B) Timothée Chalamet" },
+      { id: "button3", text: "C) Robert Pattinson" },
+      { id: "button4", text: "D) Chris Hemsworth" }
+    ],
+    correctAnswer: "button2"
+  },
+    {
+    question: "What is the valuable resource found on the planet Arrakis?",
+    answers: [
+      { id: "button1", text: "A) Gold" },
+      { id: "button2", text: "B) Water" },
+      { id: "button3", text: "C) Melange (Spice)" },
+      { id: "button4", text: "D) Diamonds" }
+    ],
+    correctAnswer: "button3"
+  },
+    {
+    question: "What is Paul Atreides' prophesied role in the story?",
+    answers: [
+      { id: "button1", text: "A) A Jedi Knight" },
+      { id: "button2", text: "B) The Chosen One" },
+      { id: "button3", text: "C) The Kwisatz Haderach" },
+      { id: "button4", text: "D) The Dark Lord" }
+    ],
+    correctAnswer: "button3"
+  },
+    {
+    question: "Which noble house is the rival of House Atreides?",
+    answers: [
+      { id: "button1", text: "A) House Stark" },
+      { id: "button2", text: "B) House Lannister" },
+      { id: "button3", text: "C) House Harkonnen" },
+      { id: "button4", text: "D) House Targaryen" }
+    ],
+    correctAnswer: "button3"
+  },
+    {
+    question: "Who composed the music for the movie \"Dune\"?",
+    answers: [
+      { id: "button1", text: "A) Hans Zimmer" },
+      { id: "button2", text: "B) John Williams" },
+      { id: "button3", text: "C) Alan Silvestri" },
+      { id: "button4", text: "D) Howard Shore" }
+    ],
+    correctAnswer: "button1"
+  },
+    {
+    question: "What themes are explored in the movie \"Dune\"?",
+    answers: [
+      { id: "button1", text: "A) Romance and Comedy" },
+      { id: "button2", text: "B) Politics, Religion, and Ecology" },
+      { id: "button3", text: "C) Action and Adventure" },
+      { id: "button4", text: "D) Horror and Thriller" }
+    ],
+    correctAnswer: "button2"
+  },
+    {
+    question: "What is the name of Paul Atreides' mother and her affiliation?",
+    answers: [
+      { id: "button1", text: "A) Lady Sansa, member of the Jedi Order" },
+      { id: "button2", text: "B) Lady Jessica, member of the Bene Gesserit sisterhood" },
+      { id: "button3", text: "C) Lady Leia, member of the Galactic Senate" },
+      { id: "button4", text: "D) Lady Arya, member of the Night's Watch" }
+    ],
+    correctAnswer: "button2"
+  },
+    {
+    question: "How is \"Dune\" (2021) received by audiences and critics?",
+    answers: [
+      { id: "button1", text: "A) Critically panned, disliked by audiences" },
+      { id: "button2", text: "B) Moderately received, mixed reviews" },
+      { id: "button3", text: "C) Commercial failure, but praised by critics" },
+      { id: "button4", text: "D) Acclaimed by both audiences and critics as a modern classic" }
+    ],
+    correctAnswer: "button3"
+  },
+    {
+    question: "Who directed the movie \"Avengers: Endgame\"?",
+    answers: [
+      { id: "button1", text: "A) Christopher Nolan" },
+      { id: "button2", text: "B) James Cameron" },
+      { id: "button3", text: "C) Steven Spielberg" },
+      { id: "button4", text: "D) Russo Brothers" }
+    ],
+    correctAnswer: "button4"
+  },
+    {
+    question: "What is the total box office earnings of \"Avengers: Endgame\"?",
+    answers: [
+      { id: "button1", text: "A) $2.798 billion USD" },
+      { id: "button2", text: "B) $2.789 billion USD" },
+      { id: "button3", text: "C) $2.879 billion USD" },
+      { id: "button4", text: "D) $2.897 billion USD" }
+    ],
+    correctAnswer: "button1"
+  },
+    {
+    question: "Which character sacrifices himself to snap Thanos and his army out of existence?",
+    answers: [
+      { id: "button1", text: "A) Bruce Banner (Hulk)" },
+      { id: "button2", text: "B) Natasha Romanoff (Black Widow)" },
+      { id: "button3", text: "C) Steve Rogers (Captain America)" },
+      { id: "button4", text: "D) Tony Stark (Iron Man)" }
+    ],
+    correctAnswer: "button4"
+  },
+    {
+    question: "What is the working title used during the production of \"Avengers: Endgame\" to avoid leaks?",
+    answers: [
+      { id: "button1", text: "A) Avengers: Reassemble" },
+      { id: "button2", text: "B) Mary Lou" },
+      { id: "button3", text: "C) Avengers: Endgame" },
+      { id: "button4", text: "D) Avengers: Final Battle" }
+    ],
+    correctAnswer: "button2"
+  },
+    {
+    question: "What is the runtime of \"Avengers: Endgame\"?",
+    answers: [
+      { id: "button1", text: "A) 181 minutes" },
+      { id: "button2", text: "B) 171 minutes" },
+      { id: "button3", text: "C) 182 minutes" },
+      { id: "button4", text: "D) 172 minutes" }
+    ],
+    correctAnswer: "button1"
+  },
+    {
+    question: "Which character brings Tony Stark and Nebula back to Earth in the movie \"Avengers: Endgame\"?",
+    answers: [
+      { id: "button1", text: "A) Captain Marvel" },
+      { id: "button2", text: "B) Doctor Strange" },
+      { id: "button3", text: "C) Thor" },
+      { id: "button4", text: "D) Spider-Man" }
+    ],
+    correctAnswer: "button1"
+  },
+    {
+    question: "Who plays the character of Natasha Romanoff (Black Widow) in the movie \"Avengers: Endgame\"?",
+    answers: [
+      { id: "button1", text: "A) Scarlett Johansson" },
+      { id: "button2", text: "B) Elizabeth Olsen" },
+      { id: "button3", text: "C) Zendaya" },
+      { id: "button4", text: "D) Gwyneth Paltrow" }
+    ],
+    correctAnswer: "button1"
+  },
+    {
+    question: "What is the main objective of the Avengers in the movie \"Avengers: Endgame\"?",
+    answers: [
+      { id: "button1", text: "A) To collect Infinity Stones for Thanos" },
+      { id: "button2", text: "B) To defeat Loki and his army" },
+      { id: "button3", text: "C) To travel back in time and retrieve the Infinity Stones" },
+      { id: "button4", text: "D) To conquer the universe" }
+    ],
+    correctAnswer: "button3"
+  },
+    
   // Add more questions here...
 ];
 
-const other = [
+const fantasy = [
   {
-    question: "1111Question 1",
+    question: "Who directed the Lord of the Rings trilogy?",
     answers: [
-      { id: "button1-1", text: "Answer 1" },
-      { id: "button1-2", text: "Answer 2" },
-      { id: "button1-3", text: "Answer 3" },
-      { id: "button1-4", text: "Answer 4" }
+      { id: "button1", text: "A) Christopher Nolan" },
+      { id: "button2", text: "B) James Cameron" },
+      { id: "button3", text: "C) Peter Jackson" },
+      { id: "button4", text: "D) Steven Spielberg" }
     ],
-    correctAnswer: "button1-2"
+    correctAnswer: "button3"
   },
   {
-    question: "111Question 2",
+    question: "What is the budget total for the three films in the Lord of the Rings trilogy?",
     answers: [
-      { id: "button2-1", text: "Answer 1" },
-      { id: "button2-2", text: "Answer 2" },
-      { id: "button2-3", text: "Answer 3" },
-      { id: "button2-4", text: "Answer 4" }
+      { id: "button1", text: "A) $2.993 billion USD" },
+      { id: "button2", text: "B) $2.939 billion USD" },
+      { id: "button3", text: "C) $2.999 billion USD" },
+      { id: "button4", text: "D) $2.933 billion USD" }
     ],
-    correctAnswer: "button2-4"
+    correctAnswer: "button1"
   },
-  {
-    question: "111Question 3",
+    {
+    question: "Who is the author of \"The Lord of the Rings\" book on which the movies are based?",
     answers: [
-      { id: "button3-1", text: "Answer 1" },
-      { id: "button3-2", text: "Answer 2" },
-      { id: "button3-3", text: "Answer 3" },
-      { id: "button3-4", text: "Answer 4" }
+      { id: "button1", text: "A) J.K. Rowling" },
+      { id: "button2", text: "B) George R.R. Martin" },
+      { id: "button3", text: "C) J.R.R. Tolkien" },
+      { id: "button4", text: "D) C.S. Lewis" }
     ],
-    correctAnswer: "button3-1"
+    correctAnswer: "button3"
   },
-  {
-    question: "111Question 4",
+    {
+    question: "Which character in the trilogy is portrayed by Ian McKellen?",
     answers: [
-      { id: "button4-1", text: "Answer 1" },
-      { id: "button4-2", text: "Answer 2" },
-      { id: "button4-3", text: "Answer 3" },
-      { id: "button4-4", text: "Answer 4" }
+      { id: "button1", text: "A) Frodo Baggins" },
+      { id: "button2", text: "B) Gandalf" },
+      { id: "button3", text: "C) Aragorn" },
+      { id: "button4", text: "D) Legolas" }
     ],
-    correctAnswer: "button4-2"
+    correctAnswer: "button2"
   },
-  {
-    question: "111Question 5",
+    {
+    question: "Which movie in the trilogy marks the beginning of the adventure?",
     answers: [
-      { id: "button5-1", text: "Answer 1" },
-      { id: "button5-2", text: "Answer 2" },
-      { id: "button5-3", text: "Answer 3" },
-      { id: "button5-4", text: "Answer 4" }
+      { id: "button1", text: "A) The Fellowship of the Ring" },
+      { id: "button2", text: "B) The Two Towers" },
+      { id: "button3", text: "C) The Return of the King" },
+      { id: "button4", text: "D) The Battle of Helm's Deep" }
     ],
-    correctAnswer: "button5-4"
+    correctAnswer: "button1"
   },
-  {
-    question: "111Question 6",
+    {
+    question: "Which actor plays the character of Frodo Baggins in the trilogy?",
     answers: [
-      { id: "button6-1", text: "Answer 1" },
-      { id: "button6-2", text: "Answer 2" },
-      { id: "button6-3", text: "Answer 3" },
-      { id: "button6-4", text: "Answer 4" }
+      { id: "button1", text: "A) Sean Astin" },
+      { id: "button2", text: "B) Elijah Wood" },
+      { id: "button3", text: "C) Dominic Monaghan" },
+      { id: "button4", text: "D) Billy Boyd" }
     ],
-    correctAnswer: "button6-1"
+    correctAnswer: "button2"
+  },
+    {
+    question: "What is the name of the dark lord seeking the One Ring in the trilogy?",
+    answers: [
+      { id: "button1", text: "A) Voldemort" },
+      { id: "button2", text: "B) Saruman" },
+      { id: "button3", text: "C) Gollum" },
+      { id: "button4", text: "D) Sauron" }
+    ],
+    correctAnswer: "button4"
+  },
+    {
+    question: "Which movie in the trilogy showcases the epic Battle of Helm's Deep?",
+    answers: [
+      { id: "button1", text: "A) The Fellowship of the Ring" },
+      { id: "button2", text: "B) The Two Towers" },
+      { id: "button3", text: "C) An Unexpected Journey" },
+      { id: "button4", text: "D) The Desolation of Smaug" }
+    ],
+    correctAnswer: "button2"
+  },
+    {
+    question: "Who portrays the character Gollum in the trilogy?",
+    answers: [
+      { id: "button1", text: "A) Viggo Mortensen" },
+      { id: "button2", text: "B) Orlando Bloom" },
+      { id: "button3", text: "C) Christopher Lee" },
+      { id: "button4", text: "D) Andy Serkis" }
+    ],
+    correctAnswer: "button4"
+  },
+    {
+    question: "What is the overarching theme explored throughout the Lord of the Rings trilogy?",
+    answers: [
+      { id: "button1", text: "A) Love conquers all" },
+      { id: "button2", text: "B) The triumph of evil" },
+      { id: "button3", text: "C) The power of friendship and sacrifice" },
+      { id: "button4", text: "D) Political intrigue and treachery" }
+    ],
+    correctAnswer: "button3"
+  },
+    {
+    question: "Who directed \"The Hobbit\" trilogy?",
+    answers: [
+      { id: "button1", text: "A) Christopher Nolan" },
+      { id: "button2", text: "B) James Cameron" },
+      { id: "button3", text: "C) Peter Jackson" },
+      { id: "button4", text: "D) Steven Spielberg" }
+    ],
+    correctAnswer: "button3"
+  },
+    {
+    question: "Who portrays the character Bilbo Baggins in \"The Hobbit\" trilogy?",
+    answers: [
+      { id: "button1", text: "A) Ian McKellen" },
+      { id: "button2", text: "B) Martin Freeman" },
+      { id: "button3", text: "C) Elijah Wood" },
+      { id: "button4", text: "D) Benedict Cumberbatch" }
+    ],
+    correctAnswer: "button2"
+  },
+    {
+    question: "What is the budget total for the three films in \"The Hobbit\" trilogy?",
+    answers: [
+      { id: "button1", text: "A) $769–775 million USD" },
+      { id: "button2", text: "B) $720 million USD" },
+      { id: "button3", text: "C) $776 million USD" },
+      { id: "button4", text: "D) $700–745 million USD" }
+    ],
+    correctAnswer: "button4"
+  },
+    {
+    question: "In which movie of \"The Hobbit\" trilogy do the characters encounter the fearsome dragon \"Smaug\"?",
+    answers: [
+      { id: "button1", text: "A) The Hobbit 1 (2012): An Unexpected Journey" },
+      { id: "button2", text: "B) The Hobbit 2 (2013): The Desolation of Smaug" },
+      { id: "button3", text: "C) The Hobbit 3 (2014): The Battle of the Five Armies" },
+      { id: "button4", text: "D) The Hobbit 4: Return of the Dragon" }
+    ],
+    correctAnswer: "button2"
+  },
+    {
+    question: "Which actor portrays the character Gollum in \"The Hobbit\" trilogy?",
+    answers: [
+      { id: "button1", text: "A) Orlando Bloom" },
+      { id: "button2", text: "B) Richard Armitage" },
+      { id: "button3", text: "C) Aidan Turner" },
+      { id: "button4", text: "D) Andy Serkis" }
+    ],
+    correctAnswer: "button2"
+  },
+    {
+    question: "What is the subtitle of the third movie in \"The Hobbit\" trilogy?",
+    answers: [
+      { id: "button1", text: "A) An Unexpected Journey" },
+      { id: "button2", text: "B) The Desolation of Smaug" },
+      { id: "button3", text: "C) The Return of the King" },
+      { id: "button4", text: "D) The Battle of the Five Armies" }
+    ],
+    correctAnswer: "button4"
+  },
+    {
+    question: "Who is the main antagonist, a powerful dragon, in \"The Hobbit\" trilogy?",
+    answers: [
+      { id: "button1", text: "A) Azog the Defiler" },
+      { id: "button2", text: "B) Smaug" },
+      { id: "button3", text: "C) Saruman" },
+      { id: "button4", text: "D) Thranduil" }
+    ],
+    correctAnswer: "button2"
+  },
+    {
+    question: "Which character leads the company of dwarves on their quest to reclaim the Dwarf Kingdom of Erebor?",
+    answers: [
+      { id: "button1", text: "A) Frodo Baggins" },
+      { id: "button2", text: "B) Gandalf" },
+      { id: "button3", text: "C) Thorin Oakenshield" },
+      { id: "button4", text: "D) Legolas" }
+    ],
+    correctAnswer: "button2"
+  },
+    {
+    question: "What is the name of the human settlement ruled by the Master, where the company seeks aid in \"The Hobbit\" trilogy?",
+    answers: [
+      { id: "button1", text: "A) Mirkwood Forest" },
+      { id: "button2", text: "B) The Lonely Mountain" },
+      { id: "button3", text: "C) Lake-town" },
+      { id: "button4", text: "D) The Misty Mountains" }
+    ],
+    correctAnswer: "button3"
+  },
+    {
+    question: "Who is the main protagonist in the \"Pirates of the Caribbean\" film series?",
+    answers: [
+      { id: "button1", text: "A) Davy Jones" },
+      { id: "button2", text: "B) Captain Barbossa" },
+      { id: "button3", text: "C) Captain Jack Sparrow" },
+      { id: "button4", text: "D) Will Turner" }
+    ],
+    correctAnswer: "button3"
+  },
+    {
+    question: "Which installment of the \"Pirates of the Caribbean\" series introduces the character of Captain Salazar, portrayed by Javier Bardem?",
+    answers: [
+      { id: "button1", text: "A) Pirates of the Caribbean 1 (2003): The Curse of the Black Pearl" },
+      { id: "button2", text: "B) Pirates of the Caribbean 3 (2007): At World's End" },
+      { id: "button3", text: "C) Pirates of the Caribbean 4 (2011): On Stranger Tides" },
+      { id: "button4", text: "D) Pirates of the Caribbean 5 (2017): Dead Men Tell No Tales" }
+    ],
+    correctAnswer: "button4"
+  },
+    {
+    question: "Who directed the first three films in the \"Pirates of the Caribbean\" series?",
+    answers: [
+      { id: "button1", text: "A) Gore Verbinski" },
+      { id: "button2", text: "B) Rob Marshall" },
+      { id: "button3", text: "C) Espen Sandberg" },
+      { id: "button4", text: "D) Joachim Rønning" }
+    ],
+    correctAnswer: "button1"
+  },
+    {
+    question: "Which actor portrays Captain Barbossa, the infamous pirate, in the \"Pirates of the Caribbean\" film series?",
+    answers: [
+      { id: "button1", text: "A) Johnny Depp" },
+      { id: "button2", text: "B) Orlando Bloom" },
+      { id: "button3", text: "C) Geoffrey Rush" },
+      { id: "button4", text: "D) Bill Nighy" }
+    ],
+    correctAnswer: "button3"
+  },
+    {
+    question: "In \"Pirates of the Caribbean: On Stranger Tides\" (2011), what are Captain Jack Sparrow and his crew searching for?",
+    answers: [
+      { id: "button1", text: "A) The Fountain of Youth" },
+      { id: "button2", text: "B) The Lost Treasure of El Dorado" },
+      { id: "button3", text: "C) The Cursed Aztec Gold" },
+      { id: "button4", text: "D) The Heart of Davy Jones" }
+    ],
+    correctAnswer: "button1"
+  },
+    {
+    question: "Which actress plays the character of Angelica, a beautiful and enigmatic pirate, in \"Pirates of the Caribbean: On Stranger Tides\"?",
+    answers: [
+      { id: "button1", text: "A) Keira Knightley" },
+      { id: "button2", text: "B) Penélope Cruz" },
+      { id: "button3", text: "C) Naomie Harris" },
+      { id: "button4", text: "D) Kaya Scodelario" }
+    ],
+    correctAnswer: "button2"
+  },
+    {
+    question: "In \"Pirates of the Caribbean 2 (2006): Dead Man's Chest,\" what does Captain Jack Sparrow owe to Davy Jones?",
+    answers: [
+      { id: "button1", text: "A) A map to a hidden treasure" },
+      { id: "button2", text: "B) His ship, the Black Pearl" },
+      { id: "button3", text: "C) The heart of Davy Jones" },
+      { id: "button4", text: "D) A debt of gold and treasure" }
+    ],
+    correctAnswer: "button3"
+  },
+    {
+    question: "Which installment in the series features the pirate lord Sao Feng, portrayed by Chow Yun-fat?",
+    answers: [
+      { id: "button1", text: "A) Pirates of the Caribbean 1 (2003): The Curse of the Black Pearl" },
+      { id: "button2", text: "B) Pirates of the Caribbean 2 (2006): Dead Man's Chest" },
+      { id: "button3", text: "C) Pirates of the Caribbean 3 (2007): At World's End" },
+      { id: "button4", text: "D) Pirates of the Caribbean 4 (2011): On Stranger Tides" }
+    ],
+    correctAnswer: "button3"
+  },
+    {
+    question: "Who is the main antagonist in \"Pirates of the Caribbean 4 (2011): On Stranger Tides\"?",
+    answers: [
+      { id: "button1", text: "A) Captain Salazar" },
+      { id: "button2", text: "B) Blackbeard" },
+      { id: "button3", text: "C) Davy Jones" },
+      { id: "button4", text: "D) Captain Barbossa" }
+    ],
+    correctAnswer: "button2"
+  },
+    {
+    question: "Who produced the \"Pirates of the Caribbean\" film series?",
+    answers: [
+      { id: "button1", text: "A) Gore Verbinski" },
+      { id: "button2", text: "B) Rob Marshall" },
+      { id: "button3", text: "C) Peter Jackson" },
+      { id: "button4", text: "D) Jerry Bruckheimer" }
+    ],
+    correctAnswer: "button4"
   },
   // Add more questions here...
 ];
@@ -431,7 +892,7 @@ function displayQuestions(displayedQuestions) {
   for (let i = 0; i < displayedQuestions.length; i++) {
     const question = displayedQuestions[i];
     const questionElement = document.createElement('div');
-    questionElement.textContent = question.question;
+    questionElement.textContent = (i+1) + ") " + question.question;
 
     const buttonContainer = document.createElement('div');
     buttonContainer.classList.add('btn-grid');
@@ -451,6 +912,8 @@ function displayQuestions(displayedQuestions) {
 
     quizContainer.appendChild(questionElement);
     quizContainer.appendChild(buttonContainer);
+    const lineBreak = document.createElement("br");
+    quizContainer.appendChild(lineBreak);
   }
 }
 
@@ -475,10 +938,3 @@ function checkAnswer(button, correctAnswer) {
 
   disableButtons(button);//disable buttons after selecting a question
 }
-
-//get number of questions from user and redirect
-document.getElementById("quizForm").onclick = (function(event) {
-  event.preventDefault();
-  var questionCount = document.getElementById("qCount").value;
-  window.location.href = "Quiz.html?questionCount=" + questionCount;
-});
