@@ -10,30 +10,15 @@
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body data-theme="dark">
-	<div class="topnav" id="myTopnav">
-        <a class="topnav-logo" href="../Student_1/index.html">
-            <img style="max-height: 80px; padding: 0;" alt="logo" src= "img/nav_bar_logo.png"></a>
-        <a href="../Student_2/homepage and feedback/Home.html">Home</a>
-        <a href="../Student_2/homepage and feedback/Feedback.html">Feedback</a>
-        <a href="../Student_1/shop/shop.html">Shop</a>
-        <a class="active" href="Quiz_details.html">Quiz</a>
-        <a href="../Student_4/Sitemap.html">Site Map</a>  
-        <a href="../Student_4/gallery.html">Gallery</a>
-        <a href="About_Us.html">About Us</a>
-        <a href="javascript:void(0);" class="icon" onclick="myFunction()">
-        <i class="fa fa-bars"></i>
-        </a>
-	</div>
     <div class="background">
-      <div class="container">
+      <div class="container" style="padding-top: 5px;">
         <h1>Quiz</h1>
-        <div class="parah" style="color: red; font-weight: bold;">WARNING! If you close the window without submitting, the timer will not reset</div>
-        <div id="quiz-container">
+          <div class="parah" style="color: red; font-weight: bold;">WARNING! If you close the window without submitting, the timer will not reset</div>
+          <div class="parah" style="color: red; font-weight: bold;">WARNING! If you reload the page the timer will not reset but your progress will!</div><br>
+          <div id="quiz-container" style="font-size: 22px; text-align: left; padding-left: 20px;">
             <!--questions go here-->
-        </div>
-		<p><br><br><br><br></p>
-
-
+          </div>
+          
 		<!--popup-->
 		<div id="overlay"></div>
 		<div id="popup">
@@ -45,18 +30,18 @@
 			<p id="rslt">  </p>
 			<p id="rslt2">  </p>
 			</div>
-		  </div>
+        </div>
 
 		<!--timer-->
-		<div class="top-bar">
+		<div class="bot-bar">
 		  <p id="timer">Time remaining: 60 seconds</p>
 		  <div id="maincontent">
 			<button class="btn" type="submit" id="submit-btn" value="Submit">Submit</button>
 			</div>
 		</div>
         </div>
-    <footer>
-        <p>&copy; Copyright 2023, IIT | Page Editor: <a style="text-decoration: none; color: #9B2323;" href="#pageEditor">Akila Indusara</a></p>
+    <footer style="margin-bottom: 85px;">
+        <p>&copy; Copyright 2023, IIT | Page Editor: <a style="text-decoration: none; color: #9B2323;" href="pageEditorStu_3.html">Akila Indusara</a></p>
     </footer>
     </div>
 	<!-- Theme switcher -->
@@ -71,6 +56,10 @@
         <label class="theme-label" for="switcher-random">Random</label>
     </div>
 	<script src="script.js"></script>
-    
+    <script>
+        window.onbeforeunload = function() {
+          return "Are you sure about that?";
+        };
+    </script>
 </body>
 </html>

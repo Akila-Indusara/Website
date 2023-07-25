@@ -13,10 +13,10 @@
 	<div class="topnav" id="myTopnav">
         <a class="topnav-logo" href="../Student_1/index.html">
             <img style="max-height: 80px; padding: 0;" alt="logo" src= "img/nav_bar_logo.png"></a>
-        <a href="../Student_2/homepage and feedback/Home.html">Home</a>
-        <a href="../Student_2/homepage and feedback/Feedback.html">Feedback</a>
+        <a href="../Student_2/homepageAndFeedback/Home.html">Home</a>
+        <a href="../Student_2/homepageAndFeedback/Feedback.html">Feedback</a>
         <a href="../Student_1/shop/shop.html">Shop</a>
-        <a href="Quiz_details.html">Quiz</a>
+        <a class="active" href="Quiz_details.html">Quiz</a>
         <a href="../Student_4/Sitemap.html">Site Map</a>  
         <a href="../Student_4/gallery.html">Gallery</a>
         <a href="About_Us.html">About Us</a>
@@ -27,23 +27,24 @@
     <div class="background">
       <div class="container">
           <h1>Quiz Details</h1>
-          <div class="parah"><br>Details here bla bla bla bla bla bla bla bla bla bla 
+          <div class="parah"><br>
+              <div class="parah">&nbsp;&nbsp;&nbsp;&nbsp; Are you a trivia master or looking to test your expertise in a particular subject? No worries! Our quizzes are carefully crafted to cater to everyone, whether you're a casual learner or a seasoned quiz enthusiast. Select your favorite genre, choose the number of questions you want to tackle (anywhere from 1 to 20) to complete with-in 60 seconds, and let the adventure begin!</div><br>
+              <div class="parah">&nbsp;&nbsp;&nbsp;&nbsp; So, are you up for the challenge? Start exploring our quizzes now and see how many questions you can answer correctly. It's time to put your knowledge to the test and discover just how much you know about the world around you. Good luck, and have a blast!</div>
+              <div class="parah" style="color: red; font-weight: bold;">WARNING! If you close the window without submitting, the timer will not reset</div>
               <form style="text-align: left; padding: inherit;" id="quizForm">
                   <br>
                 <label for="qCount">Category:</label>
                 <div class="custom-select"  style="width:200px;">
                     <select id="categ" name="category">
                         <option value="1">Fantasy</option>
-                        <option value="1">Fantasy</option>
                         <option value="2">Other</option>
                         <!-- Add more options for different question counts -->
                     </select>
                 </div>
                   <br>
-                <label for="qCount">Number of Questions:</label>
+                <label for="qCount">Number of Questions(time is only 60 seconds):</label>
                 <div class="custom-select"  style="width:200px;">
                     <select id="qCount" name="questionCount">
-                        <option value="10">10 Questions</option>
                         <option value="1">01 Questions</option>
                         <option value="2">02 Questions</option>
                         <option value="3">03 Questions</option>
@@ -53,7 +54,7 @@
                         <option value="7">07 Questions</option>
                         <option value="8">08 Questions</option>
                         <option value="9">09 Questions</option>
-                        <option value="10">10 Questions</option>
+                        <option value="10" selected>10 Questions</option>
                         <option value="11">11 Questions</option>
                         <option value="12">12 Questions</option>
                         <option value="13">13 Questions</option>
@@ -73,22 +74,22 @@
           </div>
       </div>
     <footer>
-        <p>&copy; Copyright 2023, IIT | Page Editor: <a style="text-decoration: none; color: #9B2323;" href="#pageEditor">Akila Indusara</a></p>
+        <p>&copy; Copyright 2023, IIT | Page Editor: <a style="text-decoration: none; color: #9B2323;" href="pageEditorStu_3.html">Akila Indusara</a></p>
     </footer>
     </div>
 	<!-- Theme switcher -->
     <div class="theme-switcher">
-        <input type="radio" id="switcher-light" name="theme-switcher" value="light" checked>
+        <input class="input-theme" type="radio" id="switcher-light" name="theme-switcher" value="light" checked>
         <label class="theme-label" for="switcher-light">Light</label>
-        <input type="radio" id="switcher-dark" name="theme-switcher" value="dark">
+        <input  class="input-theme" type="radio" id="switcher-dark" name="theme-switcher" value="dark">
         <label class="theme-label" for="switcher-dark">Dark</label>
-        <input type="radio" id="switcher-colorful" name="theme-switcher" value="colorful">
+        <input  class="input-theme" type="radio" id="switcher-colorful" name="theme-switcher" value="colorful">
         <label class="theme-label" for="switcher-colorful">Colorful</label>
-        <input type="radio" id="switcher-random" name="theme-switcher" value="random">
+        <input  class="input-theme" type="radio" id="switcher-random" name="theme-switcher" value="random">
         <label class="theme-label" for="switcher-random">Random</label>
     </div>
     <script>
-        //get number of questions from user and redirect with it in the url
+        //get number of questions and the genre from user and redirect with it in the url
         document.getElementById("quizForm").addEventListener("submit", function(event) {
             event.preventDefault();
             let questionCount = document.getElementById("qCount").value;
