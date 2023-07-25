@@ -1,0 +1,142 @@
+
+body {
+	margin: 0;
+}
+.wrapper.buttons{
+    width: 100%;
+    display:flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+    margin-bottom: 20px;
+}
+
+.image-grid {
+	--gap: 16px;
+	--num-cols: 4;
+	--row-height: 250px;
+
+	box-sizing: border-box;
+	padding: var(--gap);
+
+	display: grid;
+	grid-template-columns: repeat(var(--num-cols), 1fr);
+	grid-auto-rows: var(--row-height);
+	gap: var(--gap);
+}
+
+.image-grid>img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+}
+
+.image-grid-col-2 {
+	grid-column: span 2;
+}
+.image-grid-col-3 {
+	grid-column: span 3;
+}
+.image-grid-col-4 {
+	grid-column: span 4;
+}
+
+.image-grid-row-2 {
+	grid-row: span 2;
+}
+.image-grid-row-4 {
+	grid-row: span 4;
+}
+
+/*ADDED---------------------------------------------*/
+.img-container{
+	display: grid;
+	grid-template-columns: repeat(4, auto);
+    gap: 20px;
+    justify-content: center;
+}
+@media screen and (max-width: 1150px) {
+	.img-container {
+		grid-template-columns: repeat(2, auto);
+	}
+}
+@media screen and (max-width: 900px) {
+	.img-container {
+		grid-template-columns: repeat(1, auto);
+	}
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 100%;
+    width: 100%;
+    opacity: 0;
+    transition: .5s ease;
+    background-color: #008CBA;
+}
+
+.gallary-container {
+    position: relative;
+    width: 250px;
+}
+.gallary-container:hover .overlay {
+    opacity: 0.9;
+}
+
+.stu-hover {
+  color: white;
+    width: 100%;
+  font-size: 20px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+/*-----------------------------------------------------------*/
+.gallery div:hover .descript {
+    opacity: 1;
+}
+
+
+.gallery .descript {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.8);
+    color: #fff;
+    font-size: 1rem;
+    text-align: center;
+    line-height: 50px;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+    margin-bottom: 1rem;
+}
+
+
+.gallery .descript button {
+    background-color: #ffc107;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.2s ease-in-out;
+}
+
+
+/* Anything udner 1024px */
+@media screen and (max-width: 1024px) {
+	.image-grid {
+		--num-cols: 2;
+		--row-height: 200px;
+	}
+}

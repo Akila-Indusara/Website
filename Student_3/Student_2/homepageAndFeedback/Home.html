@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>POP Movies | Home</title>
+        <link rel="icon" type="image/x-icon" href="../favicon.png">
+        <style>
+            .movie a{
+                text-decoration: none;
+                color: antiquewhite;
+            }
+            .movie{
+                border: thick solid black;
+                border-radius: 22.5px;
+                box-shadow: 15px 15px 20px #000000;
+            }
+            .movie p{
+                font-weight: bold;
+                font-size: 20px;
+                padding: 10px;
+            }
+            .movie:hover{
+                background-color: #FFBC86;
+            }
+            #myVideo {
+                position: fixed;
+                right: 0;
+                bottom: 0;
+                min-width: 100%; 
+                min-height: 100%;
+                z-index: -1;
+            }
+
+        </style>
+        <link rel="stylesheet" type="text/css" href="style.css">
+        <!-- Load an icon library to show a hamburger menu (bars) on small screens -->
+	    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    </head>
+<body>
+    <video autoplay muted loop id="myVideo">
+      <source src="background.mp4" type="video/mp4">
+    </video>
+    <div class="topnav" id="myTopnav">
+        <a class="topnav-logo" href="../../Student_1/index.html">
+            <img style="max-height: 80px; padding: 0;" alt="logo" src= "../nav_bar_logo.png"></a>
+        <a href="Home.html">Home</a>
+        <a href="Feedback.html">Feedback</a>
+        <a href="../../Student_1/shop/shop.html">Shop</a>
+        <a href="../../Student_3/Quiz_details.html">Quiz</a>
+        <a href="../../Student_4/Sitemap.html">Site Map</a>  
+        <a href="../../Student_4/gallery.html">Gallery</a>
+        <a href="../../Student_3/About_Us.html">About Us</a>        
+        <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+        <i class="fa fa-bars"></i>
+        </a>
+	</div>
+    <div class="background" style="background-color: rgba(255,255,255,0.4)">
+            <div class="container" style="background-color: rgba(255,255,255,0.4)">
+                <br><br><br>
+                <div class="movie-container">
+                    <div class="movie">
+                        <a href="../../Student_1/genre page folder/content.html">
+                        <img src="lalaland.png" style="width: 400px;" alt="romance">
+                        <p><a href="Student1.html">Romance</a></p>
+                        </a>
+                    </div>
+                    <div class="movie">
+                        <a href="../Action.html">
+                        <img src="action3.png" style="width: 400px;" alt="action">
+                        <p><a href="Student2.html">Action</a></p>
+                        </a>
+                    </div>
+                    <div class="movie">
+                        <a href="../../Student_3/Fantasy.html">
+                        <img src="fantasy.png" style="width: 400px;" alt="fantasy">
+                        <p><a href="Student3.html">Fantasy</a></p>
+                        </a>
+                    </div>
+                    <div class="movie">
+                        <a href="../../Student_4/SciFi.html">
+                        <img src="interstellar.png" style="width: 400px;" alt="sci-fi">
+                        <p><a href="Student4.html">Science fiction</a></p>
+                        </a>
+                    </div>
+                </div> 
+            </div>
+        <footer style="background-color: black;">
+        <p style="color: white;">&copy; Copyright 2023, IIT | Page Editor: <a style="text-decoration: none; color: #B01D1F;" href="PageEditor_student2.html">Student 2</a></p>
+    </footer>
+</div>
+        <script src="script.js"></script>
+</body>
+</html>
